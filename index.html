@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jori Grym - Käyttäytymistaloustieteilijä & Tutkija</title>
+    <title>Jori Grym | Behavioral Economist & Researcher</title>
     <style>
         * {
             margin: 0;
@@ -12,552 +12,621 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
             line-height: 1.6;
-            color: #333;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
+            color: #2c3e50;
+            background-color: #f8f9fa;
         }
 
-        .container {
+        /* Navigation */
+        nav {
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 20px;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #2c3e50;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #3498db;
+        }
+
+        /* Header Section */
         .header {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
-            padding: 40px;
-            margin-bottom: 30px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            animation: slideInFromTop 0.8s ease-out;
+            background-color: #fff;
+            padding: 4rem 2rem 3rem;
         }
 
-        @keyframes slideInFromTop {
-            from {
-                transform: translateY(-50px);
-                opacity: 0;
-            }
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            gap: 3rem;
+            align-items: start;
         }
 
         .profile-image {
-            width: 150px;
-            height: 150px;
+            width: 200px;
+            height: 200px;
             border-radius: 50%;
-            margin: 0 auto 20px;
             overflow: hidden;
-            border: 4px solid transparent;
-            background: linear-gradient(45deg, #667eea, #764ba2);
-            animation: pulse 2s infinite;
-            position: relative;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
 
         .profile-image img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            border-radius: 50%;
         }
 
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
+        .header-text h1 {
+            font-size: 2.5rem;
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
         }
 
-        h1 {
-            font-size: 2.5em;
-            margin-bottom: 10px;
-            background: linear-gradient(45deg, #667eea, #764ba2);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .subtitle {
-            font-size: 1.2em;
-            color: #666;
-            margin-bottom: 20px;
+        .header-text h2 {
+            font-size: 1.25rem;
+            color: #7f8c8d;
+            font-weight: 400;
+            margin-bottom: 1.5rem;
         }
 
         .bio {
-            font-size: 1.1em;
-            line-height: 1.7;
             color: #555;
+            line-height: 1.8;
+            max-width: 800px;
+        }
+
+        /* Main Content */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
         }
 
         .section {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
-            padding: 30px;
-            margin-bottom: 30px;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-            animation: slideInFromBottom 0.8s ease-out;
-            animation-delay: 0.2s;
-            animation-fill-mode: both;
+            background-color: #fff;
+            padding: 3rem;
+            margin-bottom: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
         }
 
-        @keyframes slideInFromBottom {
-            from {
-                transform: translateY(50px);
-                opacity: 0;
-            }
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
+        .section-title {
+            font-size: 1.75rem;
+            color: #2c3e50;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid #ecf0f1;
         }
 
-        h2 {
-            font-size: 2em;
-            margin-bottom: 20px;
-            color: #333;
-            position: relative;
-            padding-bottom: 10px;
+        /* Publications Grid */
+        .publications-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
         }
 
-        h2:after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 50px;
-            height: 3px;
-            background: linear-gradient(45deg, #667eea, #764ba2);
-            border-radius: 2px;
+        .publication-item {
+            padding: 1.5rem;
+            border-left: 3px solid #3498db;
+            background-color: #f8f9fa;
+            transition: all 0.3s;
         }
 
-        .articles-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-            margin-top: 20px;
+        .publication-item:hover {
+            background-color: #ecf0f1;
+            transform: translateX(5px);
         }
 
-        .article-card {
-            background: rgba(255, 255, 255, 0.8);
-            border-radius: 15px;
-            padding: 20px;
-            border-left: 4px solid #667eea;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
+        .publication-journal {
+            font-size: 0.875rem;
+            color: #3498db;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
-        .article-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
-            transition: left 0.5s;
+        .publication-title {
+            font-size: 1.1rem;
+            color: #2c3e50;
+            margin: 0.5rem 0;
+            font-weight: 600;
         }
 
-        .article-card:hover::before {
-            left: 100%;
+        .publication-year {
+            font-size: 0.875rem;
+            color: #7f8c8d;
+            margin-bottom: 0.75rem;
         }
 
-        .article-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-        }
-
-        .publication {
-            font-size: 0.9em;
-            color: #667eea;
-            font-weight: bold;
-            margin-bottom: 5px;
-        }
-
-        .article-title {
-            font-size: 1.1em;
-            font-weight: bold;
-            margin-bottom: 10px;
-            color: #333;
-        }
-
-        .article-date {
-            font-size: 0.85em;
-            color: #888;
-            margin-bottom: 10px;
-        }
-
-        .article-link {
+        .publication-link {
             display: inline-block;
-            padding: 8px 16px;
-            background: linear-gradient(45deg, #667eea, #764ba2);
+            padding: 0.5rem 1rem;
+            background-color: #3498db;
             color: white;
             text-decoration: none;
-            border-radius: 20px;
-            font-size: 0.9em;
-            transition: all 0.3s ease;
+            border-radius: 4px;
+            font-size: 0.875rem;
+            transition: background-color 0.3s;
         }
 
-        .article-link:hover {
-            transform: scale(1.05);
-            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        .publication-link:hover {
+            background-color: #2980b9;
         }
 
-        .tv-episodes {
+        /* TV Episodes */
+        .episodes-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 20px;
-            margin-top: 20px;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 1.5rem;
         }
 
         .episode-card {
-            background: rgba(255, 255, 255, 0.9);
-            border-radius: 15px;
-            padding: 20px;
-            border: 2px solid #764ba2;
-            transition: all 0.3s ease;
-            position: relative;
+            border: 1px solid #e1e8ed;
+            border-radius: 8px;
+            padding: 1.5rem;
+            background-color: #fff;
+            transition: box-shadow 0.3s;
         }
 
         .episode-card:hover {
-            transform: translateY(-3px);
-            border-color: #667eea;
-            box-shadow: 0 10px 25px rgba(118, 75, 162, 0.2);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         }
 
         .episode-title {
-            font-size: 1.1em;
-            font-weight: bold;
-            margin-bottom: 10px;
-            color: #333;
+            font-size: 1.1rem;
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
         }
 
-        .episode-description {
-            color: #666;
-            margin-bottom: 15px;
+        .episode-info {
+            color: #7f8c8d;
+            font-size: 0.875rem;
+            margin-bottom: 1rem;
             line-height: 1.6;
         }
 
         .watch-link {
             display: inline-block;
-            padding: 10px 20px;
-            background: linear-gradient(45deg, #764ba2, #667eea);
+            padding: 0.5rem 1.25rem;
+            background-color: #e74c3c;
             color: white;
             text-decoration: none;
-            border-radius: 25px;
-            font-weight: bold;
-            transition: all 0.3s ease;
+            border-radius: 4px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            transition: background-color 0.3s;
         }
 
         .watch-link:hover {
-            transform: scale(1.05);
-            box-shadow: 0 5px 15px rgba(118, 75, 162, 0.4);
+            background-color: #c0392b;
         }
 
-        .contact-section {
-            background: linear-gradient(45deg, #667eea, #764ba2);
+        /* Contact Section */
+        .contact-info {
+            background-color: #2c3e50;
             color: white;
+            padding: 3rem;
+            border-radius: 8px;
             text-align: center;
         }
 
-        .contact-section h2 {
+        .contact-info h2 {
             color: white;
+            margin-bottom: 2rem;
         }
 
-        .contact-section h2:after {
-            background: white;
-        }
-
-        .social-links {
+        .contact-links {
             display: flex;
             justify-content: center;
-            gap: 20px;
-            margin-top: 20px;
+            gap: 1.5rem;
+            flex-wrap: wrap;
         }
 
-        .social-link {
+        .contact-link {
             display: inline-block;
-            padding: 12px 24px;
-            background: rgba(255, 255, 255, 0.2);
+            padding: 0.75rem 1.5rem;
+            background-color: rgba(255,255,255,0.1);
             color: white;
             text-decoration: none;
-            border-radius: 30px;
-            border: 2px solid rgba(255, 255, 255, 0.3);
-            transition: all 0.3s ease;
-            backdrop-filter: blur(10px);
+            border-radius: 4px;
+            border: 1px solid rgba(255,255,255,0.2);
+            transition: all 0.3s;
         }
 
-        .social-link:hover {
-            background: rgba(255, 255, 255, 0.3);
+        .contact-link:hover {
+            background-color: rgba(255,255,255,0.2);
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
         }
 
+        /* Footer */
+        footer {
+            background-color: #34495e;
+            color: #ecf0f1;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+        }
+
+        /* Responsive */
         @media (max-width: 768px) {
-            .container {
-                padding: 10px;
+            .header-content {
+                grid-template-columns: 1fr;
+                text-align: center;
             }
-            
-            .header {
-                padding: 20px;
+
+            .profile-image {
+                margin: 0 auto;
             }
-            
-            h1 {
-                font-size: 2em;
-            }
-            
-            .social-links {
+
+            .nav-container {
                 flex-direction: column;
-                align-items: center;
+                gap: 1rem;
+            }
+
+            .nav-links {
+                flex-direction: column;
+                text-align: center;
+                gap: 0.5rem;
+            }
+
+            .section {
+                padding: 2rem 1.5rem;
+            }
+
+            .episodes-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <header class="header">
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="nav-brand">
+                <strong>Jori Grym</strong>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#publications">Publications</a></li>
+                <li><a href="#media">Media</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="header" id="about">
+        <div class="header-content">
             <div class="profile-image">
                 <img src="https://github.com/JoriGrym/jorigrym.github.io/raw/main/398423632_10160984761433416_5382517660522378365_n.jpg" alt="Jori Grym" />
             </div>
-            <h1>Jori Grym</h1>
-            <p class="subtitle">Käyttäytymisstrategi | Käyttäytymistaloustieteen tutkija | Tiedeviestijä</p>
-            <p class="bio">
-                Käyttäytymisstrategi Verohallinnon Esikunta- ja oikeusyksikössä sekä käyttäytymistaloustieteen tutkija Hanken School of Economicsissa. 
-                Tutkin moraalista tuomitsemista ja eettistä päätöksentekoa, sekä opetan kuluttaja- ja markkinointipsykologiaa. 
-                Esiinnyn säännöllisesti Ylen Jälkikaronkka-ohjelmassa tiedeviestijänä.
-            </p>
-        </header>
+            <div class="header-text">
+                <h1>Jori Grym</h1>
+                <h2>Behavioral Strategist | Behavioral Economics Researcher | Science Communicator</h2>
+                <p class="bio">
+                    I am a Behavioral Strategist at the Finnish Tax Administration's Headquarters and Legal Unit, and a Behavioral Economics Researcher at Hanken School of Economics. 
+                    My research focuses on moral judgment and ethical decision-making. I teach consumer and marketing psychology, and regularly appear as a science communicator 
+                    on Yle's Jälkikaronkka program.
+                </p>
+            </div>
+        </div>
+    </header>
 
+    <!-- Main Content -->
+    <main class="container">
+        <!-- Scientific Publications -->
+        <section class="section" id="publications">
+            <h2 class="section-title">Scientific Publications</h2>
+            <div class="publications-list">
+                <div class="publication-item">
+                    <div class="publication-journal">Imagination, Cognition & Personality (SAGE)</div>
+                    <div class="publication-title">Studies on Moral Judgment and Cognition Involving Cryptocurrencies and Tax Evasion</div>
+                    <div class="publication-year">2024</div>
+                    <a href="https://journals.sagepub.com/doi/10.1177/02762366241268122" class="publication-link" target="_blank">Read Article</a>
+                </div>
+                
+                <div class="publication-item">
+                    <div class="publication-journal">Behavioral Sciences (MDPI)</div>
+                    <div class="publication-title">A Crime by Any Other Name: Gender Differences in Moral Reasoning When Judging the Tax Evasion of Cryptocurrency Traders</div>
+                    <div class="publication-year">2024</div>
+                    <a href="https://www.mdpi.com/2076-328X/14/3/198" class="publication-link" target="_blank">Read Article</a>
+                </div>
+                
+                <div class="publication-item">
+                    <div class="publication-journal">SSRN Working Paper</div>
+                    <div class="publication-title">The Joy of Tax: Feelings of Warm Glow and Trust in Tax Administration as Antecedents to Bi-Dimensional Tax Morale</div>
+                    <div class="publication-year">2023</div>
+                    <a href="https://ssrn.com/abstract=4602266" class="publication-link" target="_blank">Read Article</a>
+                </div>
+                
+                <div class="publication-item">
+                    <div class="publication-journal">Hanken School of Economics</div>
+                    <div class="publication-title">Judging Decisions: Essays on Moral Judgment and Ethical Decision-Making (PhD Dissertation)</div>
+                    <div class="publication-year">2023</div>
+                    <a href="https://helda.helsinki.fi/bitstream/handle/10138/357543/Jori_Grym_dissertation_2023.pdf" class="publication-link" target="_blank">Read Dissertation</a>
+                </div>
+                
+                <div class="publication-item">
+                    <div class="publication-journal">Nordic Journal of Business</div>
+                    <div class="publication-title">To Cheat or Not to Cheat? The Effect of a Moral Reminder on Cheating</div>
+                    <div class="publication-year">2017</div>
+                    <a href="https://njb.fi/wp-content/uploads/2017/01/Grym_Liljander.pdf" class="publication-link" target="_blank">Read Article</a>
+                </div>
+                
+            
+            </div>
+        </section>
+
+        <!-- Opinion Articles -->
         <section class="section">
-            <h2>🔬 Tieteelliset julkaisut</h2>
-            <div class="articles-grid">
-                <div class="article-card">
-                    <div class="publication">Imagination, Cognition & Personality (SAGE)</div>
-                    <div class="article-title">Studies on Moral Judgment and Cognition Involving Cryptocurrencies and Tax Evasion</div>
-                    <div class="article-date">2024</div>
-                    <a href="https://journals.sagepub.com/doi/10.1177/02762366241268122" class="article-link" target="_blank">Lue artikkeli</a>
+            <h2 class="section-title">Opinion Articles</h2>
+            <div class="publications-list">
+                <div class="publication-item">
+                    <div class="publication-journal">Turun Sanomat</div>
+                    <div class="publication-title">Miten määritellä taiteen arvo ja oikeuttaa sen julkinen rahoitus?</div>
+                    <div class="publication-year">March 4, 2025</div>
+                    <a href="https://muckrack.com/jori-grym/articles" class="publication-link" target="_blank">View on Muck Rack</a>
                 </div>
                 
-                <div class="article-card">
-                    <div class="publication">Behavioral Sciences (MDPI)</div>
-                    <div class="article-title">A Crime by Any Other Name: Gender Differences in Moral Reasoning When Judging the Tax Evasion of Cryptocurrency Traders</div>
-                    <div class="article-date">2024</div>
-                    <a href="https://www.mdpi.com/2076-328X/14/3/198" class="article-link" target="_blank">Lue artikkeli</a>
-                </div>
-                
-                <div class="article-card">
-                    <div class="publication">SSRN Working Paper</div>
-                    <div class="article-title">The Joy of Tax: Feelings of Warm Glow and Trust in Tax Administration as Antecedents to Bi-Dimensional Tax Morale</div>
-                    <div class="article-date">2023</div>
-                    <a href="https://ssrn.com/abstract=4602266" class="article-link" target="_blank">Lue artikkeli</a>
-                </div>
-                
-                <div class="article-card">
-                    <div class="publication">Hanken School of Economics</div>
-                    <div class="article-title">Judging Decisions: Essays on Moral Judgment and Ethical Decision-Making (PhD Dissertation)</div>
-                    <div class="article-date">2023</div>
-                    <a href="https://helda.helsinki.fi/bitstream/handle/10138/357543/Jori_Grym_dissertation_2023.pdf" class="article-link" target="_blank">Lue väitöskirja</a>
-                </div>
-                
-                <div class="article-card">
-                    <div class="publication">Nordic Journal of Business</div>
-                    <div class="article-title">To Cheat or Not to Cheat? The Effect of a Moral Reminder on Cheating</div>
-                    <div class="article-date">2017</div>
-                    <a href="https://njb.fi/wp-content/uploads/2017/01/Grym_Liljander.pdf" class="article-link" target="_blank">Lue artikkeli</a>
-                </div>
-                
-                <div class="article-card">
-                    <div class="publication">ResearchGate</div>
-                    <div class="article-title">Can Moral Reminders Curb Corruption? Evidence from an Online Classroom Experiment</div>
-                    <div class="article-date">2022</div>
-                    <a href="https://www.researchgate.net/publication/359506971" class="article-link" target="_blank">Lue artikkeli</a>
+                <div class="publication-item">
+                    <div class="publication-journal">Turun Sanomat</div>
+                    <div class="publication-title">Jokainen kysely ei ole tutkimus – huomiokykymme on rajallinen</div>
+                    <div class="publication-year">November 17, 2024</div>
+                    <a href="https://www.ts.fi/puheenvuorot/6490230" class="publication-link" target="_blank">Read Article</a>
                 </div>
             </div>
         </section>
 
+        <!-- Blog Posts -->
         <section class="section">
-            <h2>📰 Mielipidekirjoitukset</h2>
-            <div class="articles-grid">
-                <div class="article-card">
-                    <div class="publication">Turun Sanomat</div>
-                    <div class="article-title">Miten määritellä taiteen arvo ja oikeuttaa sen julkinen rahoitus?</div>
-                    <div class="article-date">4.3.2025</div>
-                    <a href="https://muckrack.com/jori-grym/articles" class="article-link" target="_blank">Katso Muck Rack</a>
+            <h2 class="section-title">Hanken CERS Blog</h2>
+            <div class="publications-list">
+                <div class="publication-item">
+                    <div class="publication-journal">Hanken CERS Blog</div>
+                    <div class="publication-title">We can give up handshakes, but we will never shake off hugging</div>
+                    <div class="publication-year">2020</div>
+                    <a href="https://blogs.hanken.fi/cers/2020/10/20/we-can-give-up-handshakes-but-we-will-never-shake-off-hugging/" class="publication-link" target="_blank">Read Post</a>
                 </div>
                 
-                <div class="article-card">
-                    <div class="publication">Turun Sanomat</div>
-                    <div class="article-title">Jokainen kysely ei ole tutkimus – huomiokykymme on rajallinen</div>
-                    <div class="article-date">17.11.2024</div>
-                    <a href="https://www.ts.fi/puheenvuorot/6490230" class="article-link" target="_blank">Lue artikkeli</a>
+                <div class="publication-item">
+                    <div class="publication-journal">Hanken CERS Blog</div>
+                    <div class="publication-title">Why should I give up flying for the environment if almost three billion people in India and China don't give a damn?</div>
+                    <div class="publication-year">2019</div>
+                    <a href="https://blogs.hanken.fi/cers/2019/11/20/why-should-i-give-up-flying-for-the-environment-if-almost-three-billion-people-in-india-and-china-dont-give-a-damn/" class="publication-link" target="_blank">Read Post</a>
+                </div>
+                
+                <div class="publication-item">
+                    <div class="publication-journal">Hanken CERS Blog</div>
+                    <div class="publication-title">Self-help gurus in the business world and academia</div>
+                    <div class="publication-year">2019</div>
+                    <a href="https://blogs.hanken.fi/cers/2019/01/15/self-help-gurus-in-the-business-world-and-academia/" class="publication-link" target="_blank">Read Post</a>
+                </div>
+                
+                <div class="publication-item">
+                    <div class="publication-journal">Hanken CERS Blog</div>
+                    <div class="publication-title">Rage, rage against the dying of the light</div>
+                    <div class="publication-year">2018</div>
+                    <a href="https://blogs.hanken.fi/cers/2018/01/26/rage-rage-against-the-dying-of-the-light/" class="publication-link" target="_blank">Read Post</a>
                 </div>
             </div>
         </section>
 
+        <!-- LinkedIn Articles -->
         <section class="section">
-            <h2>📝 Hanken CERS -blogi</h2>
-            <div class="articles-grid">
-                <div class="article-card">
-                    <div class="publication">Hanken CERS Blog</div>
-                    <div class="article-title">We can give up handshakes, but we will never shake off hugging</div>
-                    <div class="article-date">2020</div>
-                    <a href="https://blogs.hanken.fi/cers/2020/10/20/we-can-give-up-handshakes-but-we-will-never-shake-off-hugging/" class="article-link" target="_blank">Lue artikkeli</a>
+            <h2 class="section-title">LinkedIn Articles</h2>
+            <div class="publications-list">
+                <div class="publication-item">
+                    <div class="publication-journal">LinkedIn</div>
+                    <div class="publication-title">Velvollisuudentunne ja kunnioitus lakia kohtaan tekee veronmaksajasta onnellisen</div>
+                    <div class="publication-year">2023</div>
+                    <a href="https://www.linkedin.com/pulse/velvollisuudentunne-ja-kunnioitus-lakia-kohtaan-tekee-jori-grym" class="publication-link" target="_blank">Read Article</a>
                 </div>
                 
-                <div class="article-card">
-                    <div class="publication">Hanken CERS Blog</div>
-                    <div class="article-title">Why should I give up flying for the environment if almost three billion people in India and China don't give a damn?</div>
-                    <div class="article-date">2019</div>
-                    <a href="https://blogs.hanken.fi/cers/2019/11/20/why-should-i-give-up-flying-for-the-environment-if-almost-three-billion-people-in-india-and-china-dont-give-a-damn/" class="article-link" target="_blank">Lue artikkeli</a>
+                <div class="publication-item">
+                    <div class="publication-journal">LinkedIn</div>
+                    <div class="publication-title">Kuvataiteilija Alex Markwith ja Jori Grym tuovat tekoälyn käsin kosketeltavaksi</div>
+                    <div class="publication-year">2022</div>
+                    <a href="https://www.linkedin.com/pulse/kuvataiteilija-alex-markwith-ja-jori-grym-tuovat-tekoälyn-grym" class="publication-link" target="_blank">Read Article</a>
                 </div>
                 
-                <div class="article-card">
-                    <div class="publication">Hanken CERS Blog</div>
-                    <div class="article-title">Self-help gurus in the business world and academia</div>
-                    <div class="article-date">2019</div>
-                    <a href="https://blogs.hanken.fi/cers/2019/01/15/self-help-gurus-in-the-business-world-and-academia/" class="article-link" target="_blank">Lue artikkeli</a>
-                </div>
-                
-                <div class="article-card">
-                    <div class="publication">Hanken CERS Blog</div>
-                    <div class="article-title">Rage, rage against the dying of the light</div>
-                    <div class="article-date">2018</div>
-                    <a href="https://blogs.hanken.fi/cers/2018/01/26/rage-rage-against-the-dying-of-the-light/" class="article-link" target="_blank">Lue artikkeli</a>
+                <div class="publication-item">
+                    <div class="publication-journal">LinkedIn</div>
+                    <div class="publication-title">Voiko algoritmi olla rasistinen?</div>
+                    <div class="publication-year">2016</div>
+                    <a href="https://www.linkedin.com/pulse/voiko-algoritmi-olla-rasistinen-jori-grym" class="publication-link" target="_blank">Read Article</a>
                 </div>
             </div>
         </section>
 
-        <section class="section">
-            <h2>💼 LinkedIn-artikkelit</h2>
-            <div class="articles-grid">
-                <div class="article-card">
-                    <div class="publication">LinkedIn</div>
-                    <div class="article-title">Velvollisuudentunne ja kunnioitus lakia kohtaan tekee veronmaksajasta onnellisen</div>
-                    <div class="article-date">2023</div>
-                    <a href="https://www.linkedin.com/pulse/velvollisuudentunne-ja-kunnioitus-lakia-kohtaan-tekee-jori-grym" class="article-link" target="_blank">Lue artikkeli</a>
-                </div>
-                
-                <div class="article-card">
-                    <div class="publication">LinkedIn</div>
-                    <div class="article-title">Kuvataiteilija Alex Markwith ja Jori Grym tuovat tekoälyn käsin kosketeltavaksi</div>
-                    <div class="article-date">2022</div>
-                    <a href="https://www.linkedin.com/pulse/kuvataiteilija-alex-markwith-ja-jori-grym-tuovat-tekoälyn-grym" class="article-link" target="_blank">Lue artikkeli</a>
-                </div>
-                
-                <div class="article-card">
-                    <div class="publication">LinkedIn</div>
-                    <div class="article-title">Voiko algoritmi olla rasistinen?</div>
-                    <div class="article-date">2016</div>
-                    <a href="https://www.linkedin.com/pulse/voiko-algoritmi-olla-rasistinen-jori-grym" class="article-link" target="_blank">Lue artikkeli</a>
-                </div>
-            </div>
-        </section>
-
-        <section class="section">
-            <h2>📺 Jälkikaronkka - Yle Areena</h2>
-            <div class="tv-episodes">
+        <!-- TV Appearances -->
+        <section class="section" id="media">
+            <h2 class="section-title">Jälkikaronkka - Yle Areena</h2>
+            <div class="episodes-grid">
                 <div class="episode-card">
                     <div class="episode-title">Myrkyllisin sieni maistuu 'lempeän pähkinäiselle' – mutta kuka sitä on maistanut?</div>
-                    <div class="episode-description">30.4.2025 - Tiedemaailman mielenkiintoisimpia käänteitä perkaavat Jori Grym, Lauri Reuter ja Samuli Siltanen.</div>
-                    <a href="https://areena.yle.fi/1-74366625" class="watch-link" target="_blank">Katso Areenasta</a>
+                    <div class="episode-info">April 30, 2025 - With Jori Grym, Lauri Reuter, and Samuli Siltanen</div>
+                    <a href="https://areena.yle.fi/1-74366625" class="watch-link" target="_blank">Watch on Areena</a>
                 </div>
                 
                 <div class="episode-card">
                     <div class="episode-title">Miksi ihmiset viehättyvät autokolarivideoista ja true crimestä?</div>
-                    <div class="episode-description">29.1.2025 - Ihmisten 'kiero ja sairas' uteliaisuus keskustelussa. Mukana Anne Liljeström ja Jori Grym.</div>
-                    <a href="https://areena.yle.fi/1-73262582" class="watch-link" target="_blank">Katso Areenasta</a>
+                    <div class="episode-info">January 29, 2025 - With Anne Liljeström and Jori Grym</div>
+                    <a href="https://areena.yle.fi/1-73262582" class="watch-link" target="_blank">Watch on Areena</a>
                 </div>
                 
                 <div class="episode-card">
                     <div class="episode-title">Majavan taito rakentaa pato tulee geeneistä, ei oppimalla</div>
-                    <div class="episode-description">30.10.2024 - Paneelissa tällä kertaa Jori Grym, Sini Merikallio ja Lauri Reuter.</div>
-                    <a href="https://areena.yle.fi/1-72317383" class="watch-link" target="_blank">Katso Areenasta</a>
+                    <div class="episode-info">October 30, 2024 - With Jori Grym, Sini Merikallio, and Lauri Reuter</div>
+                    <a href="https://areena.yle.fi/1-72317383" class="watch-link" target="_blank">Watch on Areena</a>
                 </div>
                 
                 <div class="episode-card">
                     <div class="episode-title">Velvollisuus kannustaa monesti paremmin kuin raha</div>
-                    <div class="episode-description">25.9.2024 - Tieteen saavutuksia ihmettelevät Jori Grym, Jukka Häkkinen ja Anne Liljeström.</div>
-                    <a href="https://areena.yle.fi/1-71939439" class="watch-link" target="_blank">Katso Areenasta</a>
+                    <div class="episode-info">September 25, 2024 - With Jori Grym, Jukka Häkkinen, and Anne Liljeström</div>
+                    <a href="https://areena.yle.fi/1-71939439" class="watch-link" target="_blank">Watch on Areena</a>
                 </div>
                 
                 <div class="episode-card">
                     <div class="episode-title">"Ihminen kertoo, kun sattuu - hevonen yrittää vaan selvitä"</div>
-                    <div class="episode-description">31.7.2024 - Eläinten kivun merkeistä ja nuorena kuullun musiikin miellyttävyydestä. Mukana Lauri Reuter, Sini Merikallio ja Jori Grym.</div>
-                    <a href="https://areena.yle.fi/1-71583714" class="watch-link" target="_blank">Katso Areenasta</a>
+                    <div class="episode-info">July 31, 2024 - With Lauri Reuter, Sini Merikallio, and Jori Grym</div>
+                    <a href="https://areena.yle.fi/1-71583714" class="watch-link" target="_blank">Watch on Areena</a>
                 </div>
                 
                 <div class="episode-card">
                     <div class="episode-title">Mitä avaruudessa oleskelu tekee ihmiskeholle?</div>
-                    <div class="episode-description">26.6.2024 - Avaruuden vaikutuksista ihmiskehoon keskustelevat Sini Merikallio, Anne Liljeström ja Jori Grym.</div>
-                    <a href="https://areena.yle.fi/1-71192533" class="watch-link" target="_blank">Katso Areenasta</a>
+                    <div class="episode-info">June 26, 2024 - With Sini Merikallio, Anne Liljeström, and Jori Grym</div>
+                    <a href="https://areena.yle.fi/1-71192533" class="watch-link" target="_blank">Watch on Areena</a>
                 </div>
                 
                 <div class="episode-card">
                     <div class="episode-title">Oliko ennen kaikki paremmin?</div>
-                    <div class="episode-description">31.1.2024 - Nostalgia ja menneisyyden ihannointi keskustelussa. Panelisteina Jori Grym, Elina Hiltunen ja Lauri Reuter.</div>
-                    <a href="https://areena.yle.fi/1-67838419" class="watch-link" target="_blank">Katso Areenasta</a>
+                    <div class="episode-info">January 31, 2024 - With Jori Grym, Elina Hiltunen, and Lauri Reuter</div>
+                    <a href="https://areena.yle.fi/1-67838419" class="watch-link" target="_blank">Watch on Areena</a>
                 </div>
                 
                 <div class="episode-card">
                     <div class="episode-title">"Onks tää Jälkikaronkka edes enää totta?"</div>
-                    <div class="episode-description">20.12.2023 - Vuoden viimeisessä jaksossa summataan tieteen vuosi 2023. Raadissa Jukka Häkkinen, Samuli Siltanen ja Jori Grym.</div>
-                    <a href="https://areena.yle.fi/1-67459152" class="watch-link" target="_blank">Katso Areenasta</a>
+                    <div class="episode-info">December 20, 2023 - With Jukka Häkkinen, Samuli Siltanen, and Jori Grym</div>
+                    <a href="https://areena.yle.fi/1-67459152" class="watch-link" target="_blank">Watch on Areena</a>
                 </div>
                 
                 <div class="episode-card">
                     <div class="episode-title">Mitä teit tänään? Leikin rotan kanssa kuurupiiloa</div>
-                    <div class="episode-description">29.11.2023 - Eläinten älykkyydestä ja leikkikäyttäytymisestä keskustelevat Lauri Reuter, Jori Grym ja Elina Hiltunen.</div>
-                    <a href="https://areena.yle.fi/1-67307449" class="watch-link" target="_blank">Katso Areenasta</a>
+                    <div class="episode-info">November 29, 2023 - With Lauri Reuter, Jori Grym, and Elina Hiltunen</div>
+                    <a href="https://areena.yle.fi/1-67307449" class="watch-link" target="_blank">Watch on Areena</a>
                 </div>
                 
                 <div class="episode-card">
                     <div class="episode-title">Miksi ihmisten on vaikea hahmottaa isoja lukuja?</div>
-                    <div class="episode-description">25.10.2023 - Ihmisten numerohahmotuksesta ja kognitiivisista rajoituksista. Panelisteina Jukka Häkkinen, Sini Merikallio ja Jori Grym.</div>
-                    <a href="https://areena.yle.fi/1-67028622" class="watch-link" target="_blank">Katso Areenasta</a>
+                    <div class="episode-info">October 25, 2023 - With Jukka Häkkinen, Sini Merikallio, and Jori Grym</div>
+                    <a href="https://areena.yle.fi/1-67028622" class="watch-link" target="_blank">Watch on Areena</a>
                 </div>
                 
                 <div class="episode-card">
                     <div class="episode-title">"Hyttysten levittämät taudit tekevät tuloaan"</div>
-                    <div class="episode-description">26.7.2023 - Tiedemaailman kiinnostavuuksia käyvät läpi Samuli Siltanen, Sini Merikallio ja Jori Grym.</div>
-                    <a href="https://areena.yle.fi/1-66452380" class="watch-link" target="_blank">Katso Areenasta</a>
+                    <div class="episode-info">July 26, 2023 - With Samuli Siltanen, Sini Merikallio, and Jori Grym</div>
+                    <a href="https://areena.yle.fi/1-66452380" class="watch-link" target="_blank">Watch on Areena</a>
                 </div>
                 
                 <div class="episode-card">
                     <div class="episode-title">Kertooko jotakin ihmisestä, jos ei pidä kauhusta?</div>
-                    <div class="episode-description">29.3.2023 - Kauhujen psykologiasta ja ihmisten erilaisista mieltymyksistä. Panelisteina Jori Grym, Sini Merikallio ja Lauri Reuter.</div>
-                    <a href="https://areena.yle.fi/1-65452202" class="watch-link" target="_blank">Katso Areenasta</a>
+                    <div class="episode-info">March 29, 2023 - With Jori Grym, Sini Merikallio, and Lauri Reuter</div>
+                    <a href="https://areena.yle.fi/1-65452202" class="watch-link" target="_blank">Watch on Areena</a>
                 </div>
                 
                 <div class="episode-card">
                     <div class="episode-title">"Nyt on puunhalaajia – ajattele jos tulevaisuudessa olisi puita, jotka halaavat meitä"</div>
-                    <div class="episode-description">25.1.2023 - Kasvien signaalit, kollektiiviset illuusiot ja syöpärokotteet. Panelisteina Lauri Reuter, Elina Hiltunen ja Jori Grym.</div>
-                    <a href="https://areena.yle.fi/1-64911179" class="watch-link" target="_blank">Katso Areenasta</a>
+                    <div class="episode-info">January 25, 2023 - With Lauri Reuter, Elina Hiltunen, and Jori Grym</div>
+                    <a href="https://areena.yle.fi/1-64911179" class="watch-link" target="_blank">Watch on Areena</a>
                 </div>
                 
                 <div class="episode-card">
                     <div class="episode-title">Oppimistyylit ovat ihan höpöhöpö-woodoota</div>
-                    <div class="episode-description">26.10.2022 - Oppimistyylien myyteistä ja todellisesta oppimisesta. Maailman ihmeitä tutkivat Jori Grym, Jukka Häkkinen ja Mikael Niku.</div>
-                    <a href="https://areena.yle.fi/1-63840111" class="watch-link" target="_blank">Katso Areenasta</a>
+                    <div class="episode-info">October 26, 2022 - With Jori Grym, Jukka Häkkinen, and Mikael Niku</div>
+                    <a href="https://areena.yle.fi/1-63840111" class="watch-link" target="_blank">Watch on Areena</a>
                 </div>
                 
                 <div class="episode-card">
                     <div class="episode-title">Hyttyset ovat kokoonsa nähden aika tehokkaita kavereita</div>
-                    <div class="episode-description">27.7.2022 - Hyönteisten hämmästyttävistä kyvyistä keskustelevat Jori Grym, Elina Hiltunen ja Lauri Reuter.</div>
-                    <a href="https://areena.yle.fi/1-63143906" class="watch-link" target="_blank">Katso Areenasta</a>
+                    <div class="episode-info">July 27, 2022 - With Jori Grym, Elina Hiltunen, and Lauri Reuter</div>
+                    <a href="https://areena.yle.fi/1-63143906" class="watch-link" target="_blank">Watch on Areena</a>
                 </div>
                 
                 <div class="episode-card">
                     <div class="episode-title">Vasen puoli kasvoistamme on ilmeikkäämpi</div>
-                    <div class="episode-description">27.4.2022 - Kasvojen asymmetriasta ja ilmeiden psykologiasta. Mukana Jukka Häkkinen, Sini Merikallio ja Jori Grym.</div>
-                    <a href="https://areena.yle.fi/1-62377960" class="watch-link" target="_blank">Katso Areenasta</a>
+                    <div class="episode-info">April 27, 2022 - With Jukka Häkkinen, Sini Merikallio, and Jori Grym</div>
+                    <a href="https://areena.yle.fi/1-62377960" class="watch-link" target="_blank">Watch on Areena</a>
                 </div>
                 
                 <div class="episode-card">
                     <div class="episode-title">Mitä yhteistä on James Webb-teleskoopin peilillä ja ihmisen hiuskarvalla?</div>
-                    <div class="episode-description">30.3.2022 - James Webb -avaruusteleskoopin kalibrointi ja Fieldsin mitali. Mukana Jori Grym, Anne Liljeström ja Samuli Siltanen.</div>
-                    <a href="https://areena.yle.fi/1-62106153" class="watch-link" target="_blank
+                    <div class="episode-info">March 30, 2022 - With Jori Grym, Anne Liljeström, and Samuli Siltanen</div>
+                    <a href="https://areena.yle.fi/1-62106153" class="watch-link" target="_blank">Watch on Areena</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section class="section contact-info" id="contact">
+            <h2>Contact</h2>
+            <div class="contact-links">
+                <a href="https://www.linkedin.com/in/jorigrym/" class="contact-link" target="_blank">LinkedIn</a>
+                <a href="https://twitter.com/jorigrym" class="contact-link" target="_blank">Twitter/X</a>
+                <a href="https://orcid.org/0000-0002-0872-7098" class="contact-link" target="_blank">ORCID</a>
+                <a href="https://www.researchgate.net/profile/Jori-Grym" class="contact-link" target="_blank">ResearchGate</a>
+                <a href="mailto:jori.grym@hanken.fi" class="contact-link">Email</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Jori Grym. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add active state to navigation
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section[id]');
+            const scrollY = window.pageYOffset;
+
+            sections.forEach(section => {
+                const sectionHeight = section.offsetHeight;
+                const sectionTop = section.offsetTop - 100;
+                const sectionId = section.getAttribute('id');
+                const navLink = document.querySelector(`.nav-links a[href="#${sectionId}"]`);
+
+                if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+                    document.querySelectorAll('.nav-links a').forEach(link => {
+                        link.style.color = '#2c3e50';
+                    });
+                    if (navLink) navLink.style.color = '#3498db';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
