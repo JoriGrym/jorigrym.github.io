@@ -1,0 +1,1089 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Jori Grym | Käyttäytymisstrategi, tutkija ja tiedeviestijä</title>
+  <meta name="description" content="Jori Grym – käyttäytymisstrategi Verohallinnossa, tutkija Hankenilla ja tiedeviestijä Ylellä.">
+  <link rel="alternate" hreflang="en" href="https://jorigrym.com/">
+  <link rel="alternate" hreflang="fi" href="https://jorigrym.com/fi/">
+  <meta name="color-scheme" content="light dark">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f3f6f8;
+      --surface: #ffffff;
+      --ink: #0e1a24;
+      --muted: #4f5f6b;
+      --faint: #7b8a95;
+      --line: #dde4e9;
+      --accent: #0b6477;
+      --accent-soft: #d5e9ee;
+      --radio: #6d28d9;
+      --tv: #dc2626;
+      --podcasts: #047857;
+      --paper: #1d4ed8;
+      --writing: #b45309;
+      --shadow: 0 1px 2px rgba(14, 26, 36, .05), 0 4px 16px rgba(14, 26, 36, .06);
+      --radius: 14px;
+      --max: 1080px;
+      --serif: "Manrope", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      --sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0c141a;
+        --surface: #142029;
+        --ink: #e6edf1;
+        --muted: #a0b0ba;
+        --faint: #74858f;
+        --line: #22323c;
+        --accent: #5cc6da;
+        --accent-soft: #12333c;
+        --radio: #a78bfa;
+        --tv: #f87171;
+        --podcasts: #34d399;
+        --paper: #7aa2ff;
+        --writing: #fbbf24;
+        --shadow: none;
+      }
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    h1, h2, .brand, .stats b { font-weight: 800 !important; }
+    .panel-title { font-weight: 700 !important; }
+    html { scroll-behavior: smooth; scroll-padding-top: 76px; -webkit-text-size-adjust: 100%; }
+    body { font-family: var(--sans); font-size: 16px; line-height: 1.6; color: var(--ink); background: var(--bg); }
+    a { color: inherit; }
+    img { display: block; max-width: 100%; }
+    ul, ol { list-style: none; }
+    button { font: inherit; color: inherit; background: none; border: 0; cursor: pointer; }
+    .ico { width: 14px; height: 14px; flex: none; }
+    .wrap { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
+    :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 6px; }
+
+    /* ---------- Top bar ---------- */
+    .topbar {
+      position: sticky; top: 0; z-index: 50;
+      background: color-mix(in srgb, var(--bg) 86%, transparent);
+      backdrop-filter: saturate(1.4) blur(12px); -webkit-backdrop-filter: saturate(1.4) blur(12px);
+      border-bottom: 1px solid var(--line);
+    }
+    .topbar .wrap { display: flex; align-items: center; justify-content: space-between; gap: 24px; height: 60px; }
+    .brand { font-family: var(--serif); font-weight: 600; font-size: 20px; text-decoration: none; letter-spacing: -.01em; white-space: nowrap; }
+    .nav { display: flex; gap: 4px; overflow-x: auto; scrollbar-width: none; }
+    .nav::-webkit-scrollbar { display: none; }
+    .nav a { text-decoration: none; font-size: 14.5px; font-weight: 500; color: var(--muted); padding: 7px 12px; border-radius: 999px; white-space: nowrap; transition: color .15s, background .15s; }
+    .nav a:hover { color: var(--ink); }
+    .nav a.on { color: var(--ink); background: var(--surface); box-shadow: var(--shadow); }
+
+    /* ---------- Hero ---------- */
+    .hero { padding: 72px 0 56px; }
+    .hero .wrap { display: grid; grid-template-columns: 1fr 260px; gap: 56px; align-items: center; }
+    .eyebrow { font-size: 13px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--accent); margin-bottom: 14px; }
+    h1 { font-family: var(--serif); font-weight: 600; font-size: clamp(44px, 7vw, 72px); line-height: 1.02; letter-spacing: -.025em; margin-bottom: 22px; }
+    .lead { font-size: 18px; color: var(--muted); max-width: 62ch; margin-bottom: 22px; }
+    .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 28px; }
+    .tags li { font-size: 13px; font-weight: 500; padding: 5px 12px; border: 1px solid var(--line); border-radius: 999px; background: var(--surface); }
+    .actions { display: flex; flex-wrap: wrap; gap: 10px; }
+    .btn { display: inline-flex; align-items: center; gap: 6px; text-decoration: none; font-weight: 500; font-size: 15px; padding: 10px 18px; border-radius: 999px; border: 1px solid var(--line); background: var(--surface); transition: transform .15s, border-color .15s; }
+    .btn:hover { border-color: var(--ink); }
+    .btn.primary { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+    .portrait { position: relative; }
+    .nav .short { display: none; }
+    .topbar .wrap > .lang { flex: none; font-size: 13.5px; font-weight: 600; text-decoration: none; padding: 6px 12px; border: 1px solid var(--line); border-radius: 999px; background: var(--surface); }
+    .topbar .wrap > .lang:hover { border-color: var(--ink); }
+    .topbar .nav { margin-left: auto; }
+    .portrait img { width: 100%; height: auto; aspect-ratio: 1; object-fit: cover; border-radius: 28px; box-shadow: var(--shadow); }
+    .portrait::before { content: ""; position: absolute; inset: 18px -18px -18px 18px; border-radius: 28px; background: var(--accent-soft); z-index: -1; }
+    .stats { grid-column: 1 / -1; display: grid; grid-template-columns: repeat(4, 1fr); margin-top: 56px; border-top: 1px solid var(--line); }
+    .stats a { text-decoration: none; padding: 20px 4px 0; }
+    .stats b { display: block; font-family: var(--serif); font-weight: 600; font-size: 34px; line-height: 1.1; }
+    .stats span { font-size: 14px; color: var(--muted); }
+    .stats a:hover span { color: var(--ink); }
+
+    /* ---------- Sections ---------- */
+    section.block { padding: 64px 0; border-top: 1px solid var(--line); }
+    .sec-head { display: flex; justify-content: space-between; align-items: end; gap: 24px; flex-wrap: wrap; margin-bottom: 28px; }
+    h2 { font-family: var(--serif); font-weight: 600; font-size: clamp(30px, 4vw, 40px); line-height: 1.1; letter-spacing: -.02em; }
+    .sec-sub { color: var(--muted); margin-top: 6px; }
+
+    /* Latest */
+    .cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+    .card { --c: var(--accent); display: flex; flex-direction: column; gap: 10px; text-decoration: none; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 20px; box-shadow: var(--shadow); border-top: 3px solid var(--c); transition: transform .15s, border-color .15s; }
+    .card:hover { transform: translateY(-2px); }
+    .card.radio { --c: var(--radio); } .card.tv { --c: var(--tv); } .card.paper { --c: var(--paper); } .card.article { --c: var(--writing); }
+    .card-kind { font-size: 12px; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; color: var(--c); }
+    .card-title { font-weight: 600; line-height: 1.35; flex: 1; display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden; }
+    .card-date { font-size: 13px; color: var(--faint); }
+
+    /* Row lists (research, writing) */
+    .rows { border-top: 1px solid var(--line); }
+    .rows li { border-bottom: 1px solid var(--line); }
+    .row { display: grid; grid-template-columns: 120px 1fr auto; gap: 24px; align-items: baseline; padding: 18px 8px; text-decoration: none; transition: background .15s; border-radius: 8px; }
+    .row:hover { background: var(--surface); }
+    .row-date { font-size: 14px; color: var(--faint); font-variant-numeric: tabular-nums; }
+    .row-main { display: flex; flex-direction: column; gap: 3px; min-width: 0; }
+    .row-outlet { font-size: 13px; font-weight: 600; color: var(--muted); }
+    .row-title { font-size: 17px; font-weight: 500; line-height: 1.4; }
+    .row-go { display: inline-flex; align-items: center; gap: 4px; font-size: 13.5px; font-weight: 500; color: var(--faint); white-space: nowrap; }
+    .row:hover .row-go { color: var(--accent); }
+
+    /* Chips */
+    .chips { display: flex; gap: 6px; flex-wrap: wrap; }
+    .chip { font-size: 13.5px; font-weight: 500; padding: 6px 13px; border-radius: 999px; border: 1px solid var(--line); background: var(--surface); color: var(--muted); }
+    .chip:hover { color: var(--ink); }
+    .chip.on { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+    .chip .n { opacity: .6; margin-left: 4px; font-variant-numeric: tabular-nums; }
+
+    /* Media */
+    .media-bar { display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; margin-bottom: 24px; }
+    .tabs { display: inline-flex; padding: 4px; gap: 4px; background: var(--surface); border: 1px solid var(--line); border-radius: 999px; }
+    .tab { display: inline-flex; align-items: center; gap: 8px; padding: 8px 16px; border-radius: 999px; font-weight: 500; font-size: 15px; color: var(--muted); }
+    .tab-count { font-size: 12px; font-weight: 600; padding: 1px 7px; border-radius: 999px; background: var(--bg); color: var(--muted); }
+    .tab[aria-selected="true"] { background: var(--ink); color: var(--bg); }
+    .tab[aria-selected="true"] .tab-count { background: color-mix(in srgb, var(--bg) 22%, transparent); color: var(--bg); }
+    .search { position: relative; flex: 1; max-width: 340px; min-width: 220px; }
+    .search input { width: 100%; font: inherit; font-size: 15px; color: var(--ink); background: var(--surface); border: 1px solid var(--line); border-radius: 999px; padding: 10px 16px 10px 40px; }
+    .search input:focus { outline: none; border-color: var(--ink); }
+    .search svg { position: absolute; left: 14px; top: 50%; transform: translateY(-50%); width: 16px; height: 16px; color: var(--faint); }
+    .panel + .panel { margin-top: 56px; }
+    .js .panel + .panel { margin-top: 0; }
+    .panel-head { margin-bottom: 14px; }
+    .panel-title { font-family: var(--serif); font-weight: 600; font-size: 24px; letter-spacing: -.01em; }
+    .panel-channel { font-family: var(--sans); font-size: 15px; font-weight: 500; color: var(--faint); }
+    .panel-blurb { color: var(--muted); font-size: 15px; }
+    .panel .chips { margin-bottom: 20px; }
+    .eps { display: grid; gap: 12px; }
+    .ep { display: grid; grid-template-columns: 110px 1fr auto; gap: 24px; align-items: start; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 20px 22px; box-shadow: var(--shadow); }
+    .ep-date { font-size: 14px; color: var(--faint); padding-top: 2px; font-variant-numeric: tabular-nums; }
+    .ep-title { font-size: 17px; font-weight: 600; line-height: 1.4; margin-bottom: 6px; }
+    .ep-title a { text-decoration: none; }
+    .ep-title a:hover { text-decoration: underline; text-underline-offset: 3px; }
+    .ep-topics { color: var(--muted); font-size: 15px; margin-bottom: 6px; }
+    .ep-people { font-size: 13.5px; color: var(--faint); }
+    .ep-go { --c: var(--accent); display: inline-flex; align-items: center; gap: 4px; text-decoration: none; font-size: 13.5px; font-weight: 600; color: var(--c); padding: 7px 12px; border-radius: 999px; border: 1px solid color-mix(in srgb, var(--c) 35%, transparent); white-space: nowrap; }
+    .ep-go:hover { background: color-mix(in srgb, var(--c) 10%, transparent); }
+    .ep-go.radio { --c: var(--radio); } .ep-go.tv { --c: var(--tv); } .ep-go.podcasts { --c: var(--podcasts); }
+    .empty { color: var(--muted); padding: 24px 0; }
+    .more { margin-top: 20px; font-weight: 500; font-size: 15px; padding: 10px 20px; border-radius: 999px; border: 1px solid var(--line); background: var(--surface); }
+    .more:hover { border-color: var(--ink); }
+    .js .is-hidden { display: none !important; }
+
+    /* Contact */
+    .contact { text-align: center; padding: 88px 0; }
+    .contact h2 { margin-bottom: 12px; }
+    .contact p { color: var(--muted); margin-bottom: 28px; }
+    .contact .actions { justify-content: center; }
+    footer { border-top: 1px solid var(--line); padding: 28px 0 40px; font-size: 14px; color: var(--faint); }
+    footer .wrap { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+    footer a { text-decoration: none; } footer a:hover { color: var(--ink); }
+
+    /* ---------- Responsive ---------- */
+    @media (max-width: 900px) {
+      .cards { grid-template-columns: repeat(2, 1fr); }
+      .hero .wrap { grid-template-columns: 1fr 200px; gap: 36px; }
+    }
+    @media (max-width: 720px) {
+      .wrap { padding: 0 16px; }
+      .topbar .wrap { flex-wrap: wrap; height: auto; gap: 2px 12px; padding-top: 10px; padding-bottom: 6px; }
+      .topbar .wrap > .lang { margin-left: auto; padding: 4px 10px; }
+      .topbar .nav { order: 3; flex-basis: 100%; margin-left: -16px; margin-right: -16px; }
+      .nav { padding: 0 12px; }
+      .nav a { padding: 6px 8px; font-size: 14px; }
+      .nav a[href="#latest"] { display: none; }
+      .nav .long { display: none; } .nav .short { display: inline; }
+      html { scroll-padding-top: 100px; }
+      .hero { padding: 40px 0 40px; }
+      .hero .wrap { grid-template-columns: 1fr; gap: 28px; }
+      .portrait { order: -1; width: 132px; }
+      .portrait img { border-radius: 22px; }
+      .portrait::before { inset: 10px -10px -10px 10px; border-radius: 22px; }
+      .lead { font-size: 16.5px; }
+      .stats { grid-template-columns: repeat(2, 1fr); row-gap: 8px; margin-top: 36px; }
+      section.block { padding: 48px 0; }
+      .cards { grid-template-columns: 1fr; gap: 12px; }
+      .row { grid-template-columns: 1fr; gap: 4px; padding: 16px 4px; }
+      .row-go { display: none; }
+      .media-bar { flex-direction: column; align-items: stretch; }
+      .tabs { display: flex; }
+      .tab { flex: 1; justify-content: center; padding: 8px 6px; gap: 6px; font-size: 14px; }
+      .search { max-width: none; }
+      .ep { grid-template-columns: 1fr; gap: 6px; padding: 18px; }
+      .ep-go { justify-self: start; margin-top: 6px; }
+    }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap">
+      <a class="brand" href="#top">Jori Grym</a>
+      <nav class="nav" aria-label="Osiot">
+        <a href="#latest">Uusimmat</a>
+        <a href="#publications">Tutkimus</a>
+        <a href="#articles">Kirjoitukset</a>
+        <a href="#media"><span class="long">TV, radio ja podcastit</span><span class="short">Media</span></a>
+        <a href="#contact">Yhteystiedot</a>
+      </nav>
+      <a class="lang" href="../" hreflang="en" lang="en">In English</a>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero" id="about">
+      <div class="wrap">
+        <div>
+          <p class="eyebrow">Käyttäytymisstrategi · Tutkija · Tiedeviestijä</p>
+          <h1>Jori Grym</h1>
+          <p class="lead">Työskentelen käyttäytymisstrategina Verohallinnossa ja käyttäytymistieteen tutkijana Hankenilla (Svenska handelshögskolan). Tutkin moraalista ja eettistä päätöksentekoa. Työskentelen myös tekoälyn käyttöönoton parissa ja pohdin, miten tekoäly muuttaa työelämää. Opetan kuluttaja- ja markkinointipsykologiaa, esiinnyn säännöllisesti tiedeviestijänä Yle Radio 1:n Kulttuuriykkösen Perjantaistudiossa ja olin vakituinen panelisti Ylen Jälkikaronkka-tiedeohjelmassa.</p>
+          <ul class="tags" aria-label="Aiheet"><li>Tekoäly ja yhteiskunta</li><li>Käyttäytymistieteet</li><li>Moraalipsykologia</li><li>Tiedeviestintä</li><li>Kuluttajapsykologia</li></ul>
+          <div class="actions">
+            <a class="btn primary" href="#contact">Ota yhteyttä</a>
+            <a class="btn" href="#media">Katso ja kuuntele</a>
+          </div>
+        </div>
+        <div class="portrait"><img src="https://github.com/JoriGrym/jorigrym.github.io/raw/main/398423632_10160984761433416_5382517660522378365_n.jpg" alt="Jori Grymin kuva" width="260" height="260"></div>
+      </div>
+      <div class="wrap">
+        <div class="stats">
+          <a href="#publications" data-stat="pubs"><b>8</b><span>Tieteellistä julkaisua</span></a>
+          <a href="#articles" data-stat="articles"><b>22</b><span>Artikkelia ja kirjoitusta</span></a>
+          <a href="#media" data-stat="media"><b>43</b><span>TV- ja radioesiintymistä Ylellä</span></a>
+          <a href="#podcasts" data-stat="pods"><b>5</b><span>Podcast-vierailua</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" id="latest">
+      <div class="wrap">
+        <div class="sec-head"><div><h2>Uusimmat</h2><p class="sec-sub">Tuorein esiintyminen, kirjoitus ja julkaisu.</p></div></div>
+        <div class="cards">
+        <a class="card radio" href="https://areena.yle.fi/1-78754090" target="_blank" rel="noopener">
+          <span class="card-kind">Radio · Perjantaistudio</span>
+          <span class="card-title">Trumpin tappio, palaako woke? Valitaanko asiantuntijat poliittisen agendan mukaan?</span>
+          <span class="card-date">6.11.2026</span>
+        </a>
+        <a class="card article" href="https://www.ts.fi/a/6951001" target="_blank" rel="noopener">
+          <span class="card-kind">Mielipide · Turun Sanomat</span>
+          <span class="card-title">Miksi journalistiopiskelijat kallistuvat vasemmalle – ja miksi se ei ole ydinkysymys?</span>
+          <span class="card-date">11.4.2026</span>
+        </a>
+        <a class="card paper" href="https://doi.org/10.1057/s41270-026-00546-3" target="_blank" rel="noopener">
+          <span class="card-kind">Tutkimus · Journal of Marketing Analytics</span>
+          <span class="card-title">Personality Does Not Directly Predict Brand Advocacy in a Utilitarian Service Category: A Bounded Null, Three Converging Accounts, and the Limits of Testing Cross-Brand Transfer</span>
+          <span class="card-date">2026</span>
+        </a>
+        <a class="card tv" href="https://areena.yle.fi/1-78194769" target="_blank" rel="noopener">
+          <span class="card-kind">TV · Jälkikaronkka</span>
+          <span class="card-title">Autossa kannattaa laulaa, se hidastaa ikääntymistä</span>
+          <span class="card-date">27.5.2026</span>
+        </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" id="publications">
+      <div class="wrap">
+        <div class="sec-head"><div><h2>Tutkimus</h2><p class="sec-sub">Vertaisarvioidut artikkelit, työpaperit ja väitöskirja.</p></div></div>
+        <ul class="rows">
+          <li><a class="row" href="https://doi.org/10.1057/s41270-026-00546-3" target="_blank" rel="noopener">
+            <span class="row-date">2026</span>
+            <span class="row-main"><span class="row-outlet">Journal of Marketing Analytics (Palgrave Macmillan)</span><span class="row-title">Personality Does Not Directly Predict Brand Advocacy in a Utilitarian Service Category: A Bounded Null, Three Converging Accounts, and the Limits of Testing Cross-Brand Transfer</span></span>
+            <span class="row-go">Lue artikkeli <svg class="ico" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </a></li>
+          <li><a class="row" href="https://journals.sagepub.com/doi/10.1177/02762366241268122" target="_blank" rel="noopener">
+            <span class="row-date">2024</span>
+            <span class="row-main"><span class="row-outlet">Imagination, Cognition &amp; Personality (SAGE)</span><span class="row-title">Studies on Moral Judgment and Cognition Involving Cryptocurrencies and Tax Evasion</span></span>
+            <span class="row-go">Lue artikkeli <svg class="ico" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </a></li>
+          <li><a class="row" href="https://www.mdpi.com/2076-328X/14/3/198" target="_blank" rel="noopener">
+            <span class="row-date">2024</span>
+            <span class="row-main"><span class="row-outlet">Behavioral Sciences (MDPI)</span><span class="row-title">A Crime by Any Other Name: Gender Differences in Moral Reasoning When Judging the Tax Evasion of Cryptocurrency Traders</span></span>
+            <span class="row-go">Lue artikkeli <svg class="ico" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </a></li>
+          <li><a class="row" href="https://ssrn.com/abstract=4602266" target="_blank" rel="noopener">
+            <span class="row-date">2023</span>
+            <span class="row-main"><span class="row-outlet">SSRN-työpaperi</span><span class="row-title">The Joy of Tax: Feelings of Warm Glow and Trust in Tax Administration as Antecedents to Bi-Dimensional Tax Morale</span></span>
+            <span class="row-go">Lue artikkeli <svg class="ico" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </a></li>
+          <li><a class="row" href="https://helda.helsinki.fi/bitstream/handle/10138/357543/Jori_Grym_dissertation_2023.pdf" target="_blank" rel="noopener">
+            <span class="row-date">2023</span>
+            <span class="row-main"><span class="row-outlet">Hanken Svenska handelshögskolan</span><span class="row-title">Judging Decisions: Essays on Moral Judgment and Ethical Decision-Making (PhD Dissertation)</span></span>
+            <span class="row-go">Lue väitöskirja <svg class="ico" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </a></li>
+          <li><a class="row" href="https://doi.org/10.1007/978-3-030-95073-6_4" target="_blank" rel="noopener">
+            <span class="row-date">2022</span>
+            <span class="row-main"><span class="row-outlet">Futures of Journalism (Palgrave Macmillan) – kirjan luku</span><span class="row-title">The Economy of Attention on Blockchain in the Brave Browser</span></span>
+            <span class="row-go">Lue luku <svg class="ico" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </a></li>
+          <li><a class="row" href="https://research.hanken.fi/en/publications/ac86e251-97a6-4252-9af3-3ed5238c36a9" target="_blank" rel="noopener">
+            <span class="row-date">2020</span>
+            <span class="row-main"><span class="row-outlet">12th Annual Critical Finance Studies Conference</span><span class="row-title">Cryptocurrencies as Technologies of (Dis)Trust</span></span>
+            <span class="row-go">Lue tiivistelmä <svg class="ico" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </a></li>
+          <li><a class="row" href="https://njb.fi/wp-content/uploads/2017/01/Grym_Liljander.pdf" target="_blank" rel="noopener">
+            <span class="row-date">2017</span>
+            <span class="row-main"><span class="row-outlet">Nordic Journal of Business</span><span class="row-title">To Cheat or Not to Cheat? The Effect of a Moral Reminder on Cheating</span></span>
+            <span class="row-go">Lue artikkeli <svg class="ico" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </a></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="block" id="articles">
+      <div class="wrap">
+        <div class="sec-head">
+          <div><h2>Kirjoitukset</h2><p class="sec-sub">Mielipidekirjoituksia suomalaisessa mediassa, blogikirjoituksia ja LinkedIn-artikkeleita.</p></div>
+          <div class="chips" id="blog" role="group" aria-label="Suodata kirjoituksia">
+            <button type="button" class="chip on" data-kind="all">Kaikki<span class="n">22</span></button>
+            <button type="button" class="chip" data-kind="opinion">Mielipide<span class="n">15</span></button>
+            <button type="button" class="chip" data-kind="blog">Hanken-blogi<span class="n">4</span></button>
+            <button type="button" class="chip" data-kind="linkedin">LinkedIn<span class="n">3</span></button>
+          </div>
+        </div>
+        <ul class="rows" id="writing-list" data-limit="8">
+          <li data-kind="opinion"><a class="row" href="https://www.ts.fi/a/6951001" target="_blank" rel="noopener">
+            <span class="row-date">11.4.2026</span>
+            <span class="row-main"><span class="row-outlet">Turun Sanomat</span><span class="row-title">Miksi journalistiopiskelijat kallistuvat vasemmalle – ja miksi se ei ole ydinkysymys?</span></span>
+            <span class="row-go">Lue artikkeli <svg class="ico" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </a></li>
+          <li data-kind="opinion"><a class="row" href="https://www.tekniikkatalous.fi/uutiset/a/bc821988-58ef-45a0-85ef-81caf043a35e" target="_blank" rel="noopener">
+            <span class="row-date">2.3.2026</span>
+            <span class="row-main"><span class="row-outlet">Tekniikka&amp;Talous</span><span class="row-title">Johtaja sortuu helposti ajatusharhaan tekoälyä käyttäessään – Siitä voi kärsiä koko organisaatio</span></span>
+            <span class="row-go">Lue artikkeli <svg class="ico" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </a></li>
+          <li data-kind="opinion"><a class="row" href="https://www.ts.fi/puheenvuorot/6688554" target="_blank" rel="noopener">
+            <span class="row-date">14.6.2025</span>
+            <span class="row-main"><span class="row-outlet">Turun Sanomat</span><span class="row-title">Incel-yhteisö ei ole niin väkivaltainen kuin mediakuva antaa ymmärtää</span></span>
+            <span class="row-go">Lue artikkeli <svg class="ico" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </a></li>
+          <li data-kind="opinion"><a class="row" href="https://www.iltalehti.fi/politiikka/a/2e0a5773-506e-40a1-b486-5930494c4b82" target="_blank" rel="noopener">
+            <span class="row-date">24.2.2025</span>
+            <span class="row-main"><span class="row-outlet">Iltalehti</span><span class="row-title">USAID ei ole vain hyväntekeväisyyttä – Elon Muskin toiminta voi johtaa vakaviin seurauksiin</span></span>
+            <span class="row-go">Lue artikkeli <svg class="ico" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </a></li>
+          <li data-kind="opinion"><a class="row" href="https://www.hs.fi/mielipide/art-2000011145859.html" target="_blank" rel="noopener">
+            <span class="row-date">24.12.2024</span>
+            <span class="row-main"><span class="row-outlet">Helsingin Sanomat</span><span class="row-title">Perustuvatko Valkoisen talon tullit tekoälyn virheelliseen logiikkaan?</span></span>
+            <span class="row-go">Lue artikkeli <svg class="ico" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </a></li>
+          <li data-kind="opinion"><a class="row" href="https://www.hs.fi/mielipide/art-2000011013436.html" target="_blank" rel="noopener">
+            <span class="row-date">27.10.2024</span>
+            <span class="row-main"><span class="row-outlet">Helsingin Sanomat</span><span class="row-title">Päiväkotien sakkomaksut opettavat vanhempia toimimaan väärin</span></span>
+            <span class="row-go">Lue artikkeli <svg class="ico" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </a></li>
+          <li data-kind="opinion"><a class="row" href="https://www.kaleva.fi/psykologisesti-turvallisessa-tilassa-on-mahdollist/11281597" target="_blank" rel="noopener">
+            <span class="row-date">9.8.2024</span>
+            <span class="row-main"><span class="row-outlet">Kaleva</span><span class="row-title">Psykologisesti turvallisessa tilassa on mahdollista esittää ideoitaan – Ylen pyrittävä moninaisuuteen</span></span>
+            <span class="row-go">Lue artikkeli <svg class="ico" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </a></li>
+          <li data-kind="opinion"><a class="row" href="https://www.hs.fi/mielipide/art-2000010424923.html" target="_blank" rel="noopener">
+            <span class="row-date">21.4.2024</span>
+            <span class="row-main"><span class="row-outlet">Helsingin Sanomat</span><span class="row-title">Paljastiko Euroviisujen äänestystulos kollektiivisen illuusion?</span></span>
+            <span class="row-go">Lue artikkeli <svg class="ico" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </a></li>
+          <li data-kind="opinion"><a class="row" href="https://www.ts.fi/puheenvuorot/6586670" target="_blank" rel="noopener">
+            <span class="row-date">10.4.2024</span>
+            <span class="row-main"><span class="row-outlet">Turun Sanomat</span><span class="row-title">Miten määritellä taiteen arvo ja oikeuttaa sen julkinen rahoitus?</span></span>
+            <span class="row-go">Lue artikkeli <svg class="ico" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </a></li>
+          <li data-kind="opinion"><a class="row" href="https://www.ts.fi/lukijoilta/6363478" target="_blank" rel="noopener">
+            <span class="row-date">21.2.2024</span>
+            <span class="row-main"><span class="row-outlet">Turun Sanomat</span><span class="row-title">Progressiivinen liberaali ei ymmärrä valtaosan maailman ihmisten arvoja</span></span>
+            <span class="row-go">Lue artikkeli <svg class="ico" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </a></li>
+          <li data-kind="opinion"><a class="row" href="https://suomenkuvalehti.fi/mielipide/vaikea-yhtalo/" target="_blank" rel="noopener">
+            <span class="row-date">26.1.2024</span>
+            <span class="row-main"><span class="row-outlet">Suomen Kuvalehti</span><span class="row-title">Vaikea yhtälö</span></span>
+            <span class="row-go">Lue artikkeli <svg class="ico" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </a></li>
+          <li data-kind="opinion"><a class="row" href="https://www.ts.fi/puheenvuorot/6490230" target="_blank" rel="noopener">
+            <span class="row-date">17.11.2023</span>
+            <span class="row-main"><span class="row-outlet">Turun Sanomat</span><span class="row-title">Kohu miesten väkivalta-asenteista muistuttaa, että jokainen kysely ei ole tutkimus</span></span>
+            <span class="row-go">Lue artikkeli <svg class="ico" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </a></li>
+          <li data-kind="opinion"><a class="row" href="https://www.kauppalehti.fi/uutiset/lue-tama-sina-viestintaa-ja-markkinointia-tyoksesi-tekeva-nainen/16e74cef-277a-48ba-bde2-440388de0fce" target="_blank" rel="noopener">
+            <span class="row-date">24.10.2023</span>
+            <span class="row-main"><span class="row-outlet">Kauppalehti</span><span class="row-title">Lue tämä, sinä viestintää ja markkinointia työksesi tekevä nainen</span></span>
+            <span class="row-go">Lue artikkeli <svg class="ico" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </a></li>
+          <li data-kind="opinion"><a class="row" href="https://www.kauppalehti.fi/uutiset/asiakaskokemus-markkinointi-ja-asiakkaan-kohtaamismallit-voivat-kohta-olla-historiaa/dde890d8-70bb-49a1-8dd5-b66304cc6226" target="_blank" rel="noopener">
+            <span class="row-date">13.9.2023</span>
+            <span class="row-main"><span class="row-outlet">Kauppalehti</span><span class="row-title">Asiakaskokemus, markkinointi ja asiakkaan kohtaamismallit voivat kohta olla historiaa</span></span>
+            <span class="row-go">Lue artikkeli <svg class="ico" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </a></li>
+          <li data-kind="opinion"><a class="row" href="https://www.tekniikkatalous.fi/uutiset/puheenvuoro-jokainen-meista-voi-paatya-pornovideoon-vasten-tahtoaan-jo-hyvin-piakkoin/d9a508ee-eb2c-4a26-bc75-dc382a137c28" target="_blank" rel="noopener">
+            <span class="row-date">15.2.2023</span>
+            <span class="row-main"><span class="row-outlet">Tekniikka&amp;Talous</span><span class="row-title">Jokainen meistä voi päätyä pornovideoon vasten tahtoaan – jo hyvin piakkoin</span></span>
+            <span class="row-go">Lue artikkeli <svg class="ico" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </a></li>
+          <li data-kind="linkedin"><a class="row" href="https://www.linkedin.com/pulse/velvollisuudentunne-ja-kunnioitus-lakia-kohtaan-tekee-jori-grym" target="_blank" rel="noopener">
+            <span class="row-date">2023</span>
+            <span class="row-main"><span class="row-outlet">LinkedIn</span><span class="row-title">Velvollisuudentunne ja kunnioitus lakia kohtaan tekee veronmaksajasta onnellisen</span></span>
+            <span class="row-go">Lue artikkeli <svg class="ico" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </a></li>
+          <li data-kind="linkedin"><a class="row" href="https://www.linkedin.com/pulse/kuvataiteilija-alex-markwith-ja-jori-grym-tuovat-tekoälyn-grym" target="_blank" rel="noopener">
+            <span class="row-date">2022</span>
+            <span class="row-main"><span class="row-outlet">LinkedIn</span><span class="row-title">Kuvataiteilija Alex Markwith ja Jori Grym tuovat tekoälyn käsin kosketeltavaksi</span></span>
+            <span class="row-go">Lue artikkeli <svg class="ico" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </a></li>
+          <li data-kind="blog"><a class="row" href="https://blogs.hanken.fi/cers/2020/10/20/we-can-give-up-handshakes-but-we-will-never-shake-off-hugging/" target="_blank" rel="noopener">
+            <span class="row-date">2020</span>
+            <span class="row-main"><span class="row-outlet">Hanken CERS Blog</span><span class="row-title">We can give up handshakes, but we will never shake off hugging</span></span>
+            <span class="row-go">Lue kirjoitus <svg class="ico" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </a></li>
+          <li data-kind="blog"><a class="row" href="https://blogs.hanken.fi/cers/2019/11/20/why-should-i-give-up-flying-for-the-environment-if-almost-three-billion-people-in-india-and-china-dont-give-a-damn/" target="_blank" rel="noopener">
+            <span class="row-date">2019</span>
+            <span class="row-main"><span class="row-outlet">Hanken CERS Blog</span><span class="row-title">Why should I give up flying for the environment if almost three billion people in India and China don&#x27;t give a damn?</span></span>
+            <span class="row-go">Lue kirjoitus <svg class="ico" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </a></li>
+          <li data-kind="blog"><a class="row" href="https://blogs.hanken.fi/cers/2019/01/15/self-help-gurus-in-the-business-world-and-academia/" target="_blank" rel="noopener">
+            <span class="row-date">2019</span>
+            <span class="row-main"><span class="row-outlet">Hanken CERS Blog</span><span class="row-title">Self-help gurus in the business world and academia</span></span>
+            <span class="row-go">Lue kirjoitus <svg class="ico" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </a></li>
+          <li data-kind="blog"><a class="row" href="https://blogs.hanken.fi/cers/2018/01/26/rage-rage-against-the-dying-of-the-light/" target="_blank" rel="noopener">
+            <span class="row-date">2018</span>
+            <span class="row-main"><span class="row-outlet">Hanken CERS Blog</span><span class="row-title">Rage, rage against the dying of the light</span></span>
+            <span class="row-go">Lue kirjoitus <svg class="ico" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </a></li>
+          <li data-kind="linkedin"><a class="row" href="https://www.linkedin.com/pulse/voiko-algoritmi-olla-rasistinen-jori-grym" target="_blank" rel="noopener">
+            <span class="row-date">2016</span>
+            <span class="row-main"><span class="row-outlet">LinkedIn</span><span class="row-title">Voiko algoritmi olla rasistinen?</span></span>
+            <span class="row-go">Lue artikkeli <svg class="ico" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </a></li>
+        </ul>
+        <button type="button" class="more" id="writing-more" data-all="Näytä kaikki {n} kirjoitusta" data-less="Näytä vähemmän" hidden></button>
+      </div>
+    </section>
+
+    <section class="block" id="media">
+      <div class="wrap">
+        <div class="sec-head"><div><h2>TV, radio ja podcastit</h2><p class="sec-sub">Paneelikeskusteluja ja haastatteluja Ylellä ja podcasteissa.</p></div></div>
+        <div class="media-bar">
+          <div class="tabs" role="tablist" aria-label="Median tyyppi" hidden>
+          <button type="button" role="tab" class="tab radio" id="tab-radio" aria-controls="radio" aria-selected="true"><span class="tab-label">Radio</span><span class="tab-count">15</span></button>
+          <button type="button" role="tab" class="tab tv" id="tab-tv" aria-controls="tv" aria-selected="false"><span class="tab-label">TV</span><span class="tab-count">28</span></button>
+          <button type="button" role="tab" class="tab podcasts" id="tab-podcasts" aria-controls="podcasts" aria-selected="false"><span class="tab-label">Podcastit</span><span class="tab-count">5</span></button>
+          </div>
+          <label class="search" hidden>
+            <svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="m11 11 3.5 3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+            <input type="search" id="media-search" placeholder="Hae aiheen tai vieraan mukaan" aria-label="Hae jaksoja aiheen tai vieraan mukaan">
+          </label>
+        </div>
+        <div class="panel" role="tabpanel" id="radio" aria-labelledby="tab-radio">
+          <div class="panel-head">
+            <div>
+              <h3 class="panel-title">Kulttuuriykkösen Perjantaistudio <span class="panel-channel">· Yle Radio 1</span></h3>
+              <p class="panel-blurb">Vakituinen raatilainen Yle Radio 1:n viikoittaisessa kulttuuri- ja arvokeskustelussa.</p>
+            </div>
+          </div>
+          <div class="chips" role="group" aria-label="Suodata vuoden mukaan"><button type="button" class="chip on" data-year="all">Kaikki</button><button type="button" class="chip" data-year="2026">2026</button><button type="button" class="chip" data-year="2025">2025</button></div>
+          <ol class="eps" data-limit="6">
+            <li class="ep" data-year="2026" data-search="trumpin tappio, palaako woke? valitaanko asiantuntijat poliittisen agendan mukaan? trumpin tappio – palaako woke? valitaanko asiantuntijat poliittisen agendan mukaan? mukana sami kuusela &amp; vehka kurjenmiekka 6.11.2026">
+              <div class="ep-date">6.11.2026</div>
+              <div class="ep-body">
+                <h4 class="ep-title"><a href="https://areena.yle.fi/1-78754090" target="_blank" rel="noopener">Trumpin tappio, palaako woke? Valitaanko asiantuntijat poliittisen agendan mukaan?</a></h4>
+                <p class="ep-topics">Trumpin tappio – palaako woke? Valitaanko asiantuntijat poliittisen agendan mukaan?</p>
+                <p class="ep-people">Mukana Sami Kuusela &amp; Vehka Kurjenmiekka</p>
+              </div>
+              <a class="ep-go radio" href="https://areena.yle.fi/1-78754090" target="_blank" rel="noopener" aria-label="Kuuntele Areenassa: Trumpin tappio, palaako woke? Valitaanko asiantuntijat poliittisen agendan mukaan?">Kuuntele Areenassa <svg class="ico" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            </li>
+            <li class="ep" data-year="2026" data-search="sanna marin kuin mannerheim ja batman? pitäisikö rappiostriimaus kieltää? sanna marinia verrataan mannerheimiin ja batmaniin. pitäisikö ihmisten itsetuhoista rappiota esittävät suoratoistot kieltää? mukana virpi hämeen-anttila &amp; kari enqvist 16.10.2026">
+              <div class="ep-date">16.10.2026</div>
+              <div class="ep-body">
+                <h4 class="ep-title"><a href="https://areena.yle.fi/1-78635753" target="_blank" rel="noopener">Sanna Marin kuin Mannerheim ja Batman? Pitäisikö rappiostriimaus kieltää?</a></h4>
+                <p class="ep-topics">Sanna Marinia verrataan Mannerheimiin ja Batmaniin. Pitäisikö ihmisten itsetuhoista rappiota esittävät suoratoistot kieltää?</p>
+                <p class="ep-people">Mukana Virpi Hämeen-Anttila &amp; Kari Enqvist</p>
+              </div>
+              <a class="ep-go radio" href="https://areena.yle.fi/1-78635753" target="_blank" rel="noopener" aria-label="Kuuntele Areenassa: Sanna Marin kuin Mannerheim ja Batman? Pitäisikö rappiostriimaus kieltää?">Kuuntele Areenassa <svg class="ico" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            </li>
+            <li class="ep" data-year="2026" data-search="seitsemänkymppiset työelämään, entä ikäsyrjintä? rahapeliaddiktiot nousuun? seitsemänkymppiset työelämään – ja mitä se merkitsee ikäsyrjinnälle. ovatko rahapeliriippuvuudet kasvussa? mukana jussi ahlroth &amp; outi hupaniittu 9.10.2026">
+              <div class="ep-date">9.10.2026</div>
+              <div class="ep-body">
+                <h4 class="ep-title"><a href="https://areena.yle.fi/1-78610334" target="_blank" rel="noopener">Seitsemänkymppiset työelämään, entä ikäsyrjintä? Rahapeliaddiktiot nousuun?</a></h4>
+                <p class="ep-topics">Seitsemänkymppiset työelämään – ja mitä se merkitsee ikäsyrjinnälle. Ovatko rahapeliriippuvuudet kasvussa?</p>
+                <p class="ep-people">Mukana Jussi Ahlroth &amp; Outi Hupaniittu</p>
+              </div>
+              <a class="ep-go radio" href="https://areena.yle.fi/1-78610334" target="_blank" rel="noopener" aria-label="Kuuntele Areenassa: Seitsemänkymppiset työelämään, entä ikäsyrjintä? Rahapeliaddiktiot nousuun?">Kuuntele Areenassa <svg class="ico" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            </li>
+            <li class="ep" data-year="2026" data-search="voisiko päättäjät arpoa? poliittisesti korrektin kielen sudenkuopat? voisiko päättäjät valita arpomalla? poliittisesti korrektin kielen sudenkuopat. mukana tuomas nevanlinna &amp; outi hupaniittu 7.8.2026">
+              <div class="ep-date">7.8.2026</div>
+              <div class="ep-body">
+                <h4 class="ep-title"><a href="https://areena.yle.fi/1-78375374" target="_blank" rel="noopener">Voisiko päättäjät arpoa? Poliittisesti korrektin kielen sudenkuopat?</a></h4>
+                <p class="ep-topics">Voisiko päättäjät valita arpomalla? Poliittisesti korrektin kielen sudenkuopat.</p>
+                <p class="ep-people">Mukana Tuomas Nevanlinna &amp; Outi Hupaniittu</p>
+              </div>
+              <a class="ep-go radio" href="https://areena.yle.fi/1-78375374" target="_blank" rel="noopener" aria-label="Kuuntele Areenassa: Voisiko päättäjät arpoa? Poliittisesti korrektin kielen sudenkuopat?">Kuuntele Areenassa <svg class="ico" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            </li>
+            <li class="ep" data-year="2026" data-search="miksi oppineet haukkuvat nolanin odysseusta? voiko fifan korruptiokehitystä estää? miksi tutkijat arvostelevat christopher nolanin odysseusta? voiko fifan korruption pysäyttää? mukana jouni kemppainen &amp; ville hänninen 31.7.2026">
+              <div class="ep-date">31.7.2026</div>
+              <div class="ep-body">
+                <h4 class="ep-title"><a href="https://areena.yle.fi/1-78375365" target="_blank" rel="noopener">Miksi oppineet haukkuvat Nolanin Odysseusta? Voiko Fifan korruptiokehitystä estää?</a></h4>
+                <p class="ep-topics">Miksi tutkijat arvostelevat Christopher Nolanin Odysseusta? Voiko Fifan korruption pysäyttää?</p>
+                <p class="ep-people">Mukana Jouni Kemppainen &amp; Ville Hänninen</p>
+              </div>
+              <a class="ep-go radio" href="https://areena.yle.fi/1-78375365" target="_blank" rel="noopener" aria-label="Kuuntele Areenassa: Miksi oppineet haukkuvat Nolanin Odysseusta? Voiko Fifan korruptiokehitystä estää?">Kuuntele Areenassa <svg class="ico" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            </li>
+            <li class="ep" data-year="2026" data-search="miksi uwe bollin ohjaama citizen vigilante on osittain kielletty saksassa? miksi mediatalot käyvät nyt toistensa kimppuun suomessa? miksi uwe bollin elokuva citizen vigilante on osittain kielletty saksassa? miksi suomalaiset mediatalot käyvät nyt toistensa kimppuun? mukana jussi turhala &amp; leena virtanen 17.7.2026">
+              <div class="ep-date">17.7.2026</div>
+              <div class="ep-body">
+                <h4 class="ep-title"><a href="https://areena.yle.fi/1-78268654" target="_blank" rel="noopener">Miksi Uwe Bollin ohjaama Citizen Vigilante on osittain kielletty Saksassa? Miksi mediatalot käyvät nyt toistensa kimppuun Suomessa?</a></h4>
+                <p class="ep-topics">Miksi Uwe Bollin elokuva Citizen Vigilante on osittain kielletty Saksassa? Miksi suomalaiset mediatalot käyvät nyt toistensa kimppuun?</p>
+                <p class="ep-people">Mukana Jussi Turhala &amp; Leena Virtanen</p>
+              </div>
+              <a class="ep-go radio" href="https://areena.yle.fi/1-78268654" target="_blank" rel="noopener" aria-label="Kuuntele Areenassa: Miksi Uwe Bollin ohjaama Citizen Vigilante on osittain kielletty Saksassa? Miksi mediatalot käyvät nyt toistensa kimppuun Suomessa?">Kuuntele Areenassa <svg class="ico" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            </li>
+            <li class="ep" data-year="2026" data-search="suvivirsi uskonnon tuputtamista? suosittelisitko taiteilijan ammattia lapsellesi? onko suvivirren laulaminen koulun kevätjuhlassa uskonnon tuputtamista? suosittelisitko taiteilijan ammattia lapsellesi? mukana heikki pursiainen &amp; tiina raevaara 29.5.2026">
+              <div class="ep-date">29.5.2026</div>
+              <div class="ep-body">
+                <h4 class="ep-title"><a href="https://areena.yle.fi/1-77570598" target="_blank" rel="noopener">Suvivirsi uskonnon tuputtamista? Suosittelisitko taiteilijan ammattia lapsellesi?</a></h4>
+                <p class="ep-topics">Onko Suvivirren laulaminen koulun kevätjuhlassa uskonnon tuputtamista? Suosittelisitko taiteilijan ammattia lapsellesi?</p>
+                <p class="ep-people">Mukana Heikki Pursiainen &amp; Tiina Raevaara</p>
+              </div>
+              <a class="ep-go radio" href="https://areena.yle.fi/1-77570598" target="_blank" rel="noopener" aria-label="Kuuntele Areenassa: Suvivirsi uskonnon tuputtamista? Suosittelisitko taiteilijan ammattia lapsellesi?">Kuuntele Areenassa <svg class="ico" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            </li>
+            <li class="ep" data-year="2026" data-search="kehen tehoavat iranin nerokkaat lego-propagandavideot? mitä seurauksia trump jeesuksena -emojilla on? keihin iranin nerokkaat lego-propagandavideot tehoavat? mitä seurauksia trump jeesuksena -emojilla on? mukana outi hupaniittu &amp; kari enqvist 17.4.2026">
+              <div class="ep-date">17.4.2026</div>
+              <div class="ep-body">
+                <h4 class="ep-title"><a href="https://areena.yle.fi/1-77570560" target="_blank" rel="noopener">Kehen tehoavat Iranin nerokkaat lego-propagandavideot? Mitä seurauksia Trump Jeesuksena -emojilla on?</a></h4>
+                <p class="ep-topics">Keihin Iranin nerokkaat lego-propagandavideot tehoavat? Mitä seurauksia Trump Jeesuksena -emojilla on?</p>
+                <p class="ep-people">Mukana Outi Hupaniittu &amp; Kari Enqvist</p>
+              </div>
+              <a class="ep-go radio" href="https://areena.yle.fi/1-77570560" target="_blank" rel="noopener" aria-label="Kuuntele Areenassa: Kehen tehoavat Iranin nerokkaat lego-propagandavideot? Mitä seurauksia Trump Jeesuksena -emojilla on?">Kuuntele Areenassa <svg class="ico" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            </li>
+            <li class="ep" data-year="2026" data-search="maailman vaarallisimmat valheet ja salaliittoteoriat maailman 50 vaarallisinta valhetta (hannu sokalan kirja). militarismin ihannointi tosi-tv:ssä. sopiiko kiroilu julkiseen keskusteluun? touretten oireyhtymän tunnettuus. koulu-uudistus. mukana vehka kurjenmiekka &amp; leena virtanen 27.2.2026">
+              <div class="ep-date">27.2.2026</div>
+              <div class="ep-body">
+                <h4 class="ep-title"><a href="https://arenan.yle.fi/1-77138641" target="_blank" rel="noopener">Maailman vaarallisimmat valheet ja salaliittoteoriat</a></h4>
+                <p class="ep-topics">Maailman 50 vaarallisinta valhetta (Hannu Sokalan kirja). Militarismin ihannointi tosi-tv:ssä. Sopiiko kiroilu julkiseen keskusteluun? Touretten oireyhtymän tunnettuus. Koulu-uudistus.</p>
+                <p class="ep-people">Mukana Vehka Kurjenmiekka &amp; Leena Virtanen</p>
+              </div>
+              <a class="ep-go radio" href="https://arenan.yle.fi/1-77138641" target="_blank" rel="noopener" aria-label="Kuuntele Areenassa: Maailman vaarallisimmat valheet ja salaliittoteoriat">Kuuntele Areenassa <svg class="ico" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            </li>
+            <li class="ep" data-year="2026" data-search="uusnatsit kotikoulussa ahvenanmaalla, ymmärrätkö inceliä uusnatsien kotikoulu ahvenanmaalla. elokuvien katsominen ja lyhenevä keskittymiskyky. incel-ilmiön ymmärtäminen. keskustelu tuloeroista. tekoäly vie nuorten työpaikkoja. mukana katleena kortesuo &amp; matti rämö 13.2.2026">
+              <div class="ep-date">13.2.2026</div>
+              <div class="ep-body">
+                <h4 class="ep-title"><a href="https://areena.yle.fi/1-77082716" target="_blank" rel="noopener">Uusnatsit kotikoulussa Ahvenanmaalla, ymmärrätkö inceliä</a></h4>
+                <p class="ep-topics">Uusnatsien kotikoulu Ahvenanmaalla. Elokuvien katsominen ja lyhenevä keskittymiskyky. Incel-ilmiön ymmärtäminen. Keskustelu tuloeroista. Tekoäly vie nuorten työpaikkoja.</p>
+                <p class="ep-people">Mukana Katleena Kortesuo &amp; Matti Rämö</p>
+              </div>
+              <a class="ep-go radio" href="https://areena.yle.fi/1-77082716" target="_blank" rel="noopener" aria-label="Kuuntele Areenassa: Uusnatsit kotikoulussa Ahvenanmaalla, ymmärrätkö inceliä">Kuuntele Areenassa <svg class="ico" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            </li>
+            <li class="ep" data-year="2026" data-search="tuomiopäivän kello tikittää, somalinuorten rangaistuslaitoskohu tuomiopäivän kello siirtyi lähemmäs keskiyötä. kohu somalinuorten rangaistuslaitoksesta. hienoilla sanoilla brassailu. ovatko kulttuuriboikotit järkeviä? suomalaiset kansalliset arvot kriisissä. mukana aino-mari tuuri &amp; kari enqvist 30.1.2026">
+              <div class="ep-date">30.1.2026</div>
+              <div class="ep-body">
+                <h4 class="ep-title"><a href="https://areena.yle.fi/1-76900698" target="_blank" rel="noopener">Tuomiopäivän kello tikittää, somalinuorten rangaistuslaitoskohu</a></h4>
+                <p class="ep-topics">Tuomiopäivän kello siirtyi lähemmäs keskiyötä. Kohu somalinuorten rangaistuslaitoksesta. Hienoilla sanoilla brassailu. Ovatko kulttuuriboikotit järkeviä? Suomalaiset kansalliset arvot kriisissä.</p>
+                <p class="ep-people">Mukana Aino-Mari Tuuri &amp; Kari Enqvist</p>
+              </div>
+              <a class="ep-go radio" href="https://areena.yle.fi/1-76900698" target="_blank" rel="noopener" aria-label="Kuuntele Areenassa: Tuomiopäivän kello tikittää, somalinuorten rangaistuslaitoskohu">Kuuntele Areenassa <svg class="ico" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            </li>
+            <li class="ep" data-year="2025" data-search="stubb priden suojelijana, greta thunberg palestiina-aktivistina greta thunberg ja aktivismin vaikuttavuus. presidentti stubb helsinki priden suojelijana. nelipäiväinen työviikko. disney hillitsee marvel-ähkyä. susipelko suomessa. mukana matti rämö &amp; mirva saukkola 6.6.2025">
+              <div class="ep-date">6.6.2025</div>
+              <div class="ep-body">
+                <h4 class="ep-title"><a href="https://areena.yle.fi/1-74163356" target="_blank" rel="noopener">Stubb Priden suojelijana, Greta Thunberg Palestiina-aktivistina</a></h4>
+                <p class="ep-topics">Greta Thunberg ja aktivismin vaikuttavuus. Presidentti Stubb Helsinki Priden suojelijana. Nelipäiväinen työviikko. Disney hillitsee Marvel-ähkyä. Susipelko Suomessa.</p>
+                <p class="ep-people">Mukana Matti Rämö &amp; Mirva Saukkola</p>
+              </div>
+              <a class="ep-go radio" href="https://areena.yle.fi/1-74163356" target="_blank" rel="noopener" aria-label="Kuuntele Areenassa: Stubb Priden suojelijana, Greta Thunberg Palestiina-aktivistina">Kuuntele Areenassa <svg class="ico" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            </li>
+            <li class="ep" data-year="2025" data-search="incelit, koulupuukotukset ja adolescence incel-ilmiö nuorten miesten keskuudessa. netflix-sarja adolescence. sukupuolierot rakkauden kokemisessa. euroviisujen israel-kohu. tarvitsemmeko enemmän myönteisiä uutisia? mukana aino-mari tuuri &amp; ville hänninen 23.5.2025">
+              <div class="ep-date">23.5.2025</div>
+              <div class="ep-body">
+                <h4 class="ep-title"><a href="https://areena.yle.fi/1-74273557" target="_blank" rel="noopener">Incelit, koulupuukotukset ja Adolescence</a></h4>
+                <p class="ep-topics">Incel-ilmiö nuorten miesten keskuudessa. Netflix-sarja Adolescence. Sukupuolierot rakkauden kokemisessa. Euroviisujen Israel-kohu. Tarvitsemmeko enemmän myönteisiä uutisia?</p>
+                <p class="ep-people">Mukana Aino-Mari Tuuri &amp; Ville Hänninen</p>
+              </div>
+              <a class="ep-go radio" href="https://areena.yle.fi/1-74273557" target="_blank" rel="noopener" aria-label="Kuuntele Areenassa: Incelit, koulupuukotukset ja Adolescence">Kuuntele Areenassa <svg class="ico" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            </li>
+            <li class="ep" data-year="2025" data-search="matti nykänen väkivaltaisena, itä-karjalan keskitysleirit tutkimus itä-karjalan keskitysleireistä. matti nykänen -dokumentti ja väkivalta. israelin ja gazan sodan uutisoinnin haasteet. suomalaisten taidemuseoiden konservatiivisuus. syntyvyyden lasku. mukana leena virtanen &amp; vehka kurjenmiekka 28.2.2025">
+              <div class="ep-date">28.2.2025</div>
+              <div class="ep-body">
+                <h4 class="ep-title"><a href="https://areena.yle.fi/podcastit/1-73005125" target="_blank" rel="noopener">Matti Nykänen väkivaltaisena, Itä-Karjalan keskitysleirit</a></h4>
+                <p class="ep-topics">Tutkimus Itä-Karjalan keskitysleireistä. Matti Nykänen -dokumentti ja väkivalta. Israelin ja Gazan sodan uutisoinnin haasteet. Suomalaisten taidemuseoiden konservatiivisuus. Syntyvyyden lasku.</p>
+                <p class="ep-people">Mukana Leena Virtanen &amp; Vehka Kurjenmiekka</p>
+              </div>
+              <a class="ep-go radio" href="https://areena.yle.fi/podcastit/1-73005125" target="_blank" rel="noopener" aria-label="Kuuntele Areenassa: Matti Nykänen väkivaltaisena, Itä-Karjalan keskitysleirit">Kuuntele Areenassa <svg class="ico" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            </li>
+            <li class="ep" data-year="2025" data-search="trump vastaan dei-koulutukset, erika vikmanin ich komme ja lapset tekoäly muuttaa todellisuutta ja kieltä (the brutalist -elokuva käytti tekoälyä aksenttien muokkaamiseen). euroopan asema trumpin ja venäjän uhkien keskellä. kiistat dei-koulutuksista yhdysvalloissa. mukana outi hupaniittu &amp; laura kolbe 24.1.2025">
+              <div class="ep-date">24.1.2025</div>
+              <div class="ep-body">
+                <h4 class="ep-title"><a href="https://areena.yle.fi/podcastit/1-72762465" target="_blank" rel="noopener">Trump vastaan DEI-koulutukset, Erika Vikmanin ICH KOMME ja lapset</a></h4>
+                <p class="ep-topics">Tekoäly muuttaa todellisuutta ja kieltä (The Brutalist -elokuva käytti tekoälyä aksenttien muokkaamiseen). Euroopan asema Trumpin ja Venäjän uhkien keskellä. Kiistat DEI-koulutuksista Yhdysvalloissa.</p>
+                <p class="ep-people">Mukana Outi Hupaniittu &amp; Laura Kolbe</p>
+              </div>
+              <a class="ep-go radio" href="https://areena.yle.fi/podcastit/1-72762465" target="_blank" rel="noopener" aria-label="Kuuntele Areenassa: Trump vastaan DEI-koulutukset, Erika Vikmanin ICH KOMME ja lapset">Kuuntele Areenassa <svg class="ico" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            </li>
+          </ol>
+          <p class="empty" hidden>Hakuasi vastaavia jaksoja ei löytynyt.</p>
+          <button type="button" class="more" data-all="Näytä kaikki {n} jaksoa" data-less="Näytä vähemmän" hidden></button>
+        </div>
+        <div class="panel" role="tabpanel" id="tv" aria-labelledby="tab-tv">
+          <div class="panel-head">
+            <div>
+              <h3 class="panel-title">Jälkikaronkka <span class="panel-channel">· Yle Aamu</span></h3>
+              <p class="panel-blurb">Panelistina Yle Aamun kuukausittaisessa tiedekeskustelussa 2019–2026. Ohjelma on päättynyt.</p>
+            </div>
+          </div>
+          <div class="chips" role="group" aria-label="Suodata vuoden mukaan"><button type="button" class="chip on" data-year="all">Kaikki</button><button type="button" class="chip" data-year="2026">2026</button><button type="button" class="chip" data-year="2025">2025</button><button type="button" class="chip" data-year="2024">2024</button><button type="button" class="chip" data-year="2023">2023</button><button type="button" class="chip" data-year="2022">2022</button><button type="button" class="chip" data-year="2021">2021</button><button type="button" class="chip" data-year="2020">2020</button><button type="button" class="chip" data-year="2019">2019</button></div>
+          <ol class="eps" data-limit="6">
+            <li class="ep" data-year="2026" data-search="autossa kannattaa laulaa, se hidastaa ikääntymistä miten kulttuurin kuluttaminen voi hidastaa ikääntymistä. hautajaisten merkitys surun käsittelyssä. jälkikaronkan viimeinen jakso. mukana sini merikallio &amp; jukka häkkinen 27.5.2026">
+              <div class="ep-date">27.5.2026</div>
+              <div class="ep-body">
+                <h4 class="ep-title"><a href="https://areena.yle.fi/1-78194769" target="_blank" rel="noopener">Autossa kannattaa laulaa, se hidastaa ikääntymistä</a></h4>
+                <p class="ep-topics">Miten kulttuurin kuluttaminen voi hidastaa ikääntymistä. Hautajaisten merkitys surun käsittelyssä. Jälkikaronkan viimeinen jakso.</p>
+                <p class="ep-people">Mukana Sini Merikallio &amp; Jukka Häkkinen</p>
+              </div>
+              <a class="ep-go tv" href="https://areena.yle.fi/1-78194769" target="_blank" rel="noopener" aria-label="Katso Areenassa: Autossa kannattaa laulaa, se hidastaa ikääntymistä">Katso Areenassa <svg class="ico" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            </li>
+            <li class="ep" data-year="2026" data-search="nuoremmat pilkkijät ottivat enemmän riskejä kenttätutkimus suomalaisista pilkkijöistä ja riskinotosta eri ikäisillä. lisäksi ice xxi -kiderakenteet ja eläinten hyvinvoinnin tutkimus. mukana lauri reuter &amp; samuli siltanen 25.2.2026">
+              <div class="ep-date">25.2.2026</div>
+              <div class="ep-body">
+                <h4 class="ep-title"><a href="https://areena.yle.fi/1-77439811" target="_blank" rel="noopener">Nuoremmat pilkkijät ottivat enemmän riskejä</a></h4>
+                <p class="ep-topics">Kenttätutkimus suomalaisista pilkkijöistä ja riskinotosta eri ikäisillä. Lisäksi Ice XXI -kiderakenteet ja eläinten hyvinvoinnin tutkimus.</p>
+                <p class="ep-people">Mukana Lauri Reuter &amp; Samuli Siltanen</p>
+              </div>
+              <a class="ep-go tv" href="https://areena.yle.fi/1-77439811" target="_blank" rel="noopener" aria-label="Katso Areenassa: Nuoremmat pilkkijät ottivat enemmän riskejä">Katso Areenassa <svg class="ico" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            </li>
+            <li class="ep" data-year="2026" data-search="veronika on vähän niin kuin lehmien einstein lehmien älykkyys – veronika oppi käyttämään harjanvartta. hiilidioksidiakku lupaavana energian varastointiratkaisuna. mukana elina hiltunen &amp; jukka häkkinen 28.1.2026">
+              <div class="ep-date">28.1.2026</div>
+              <div class="ep-body">
+                <h4 class="ep-title"><a href="https://areena.yle.fi/1-77193884" target="_blank" rel="noopener">Veronika on vähän niin kuin lehmien Einstein</a></h4>
+                <p class="ep-topics">Lehmien älykkyys – Veronika oppi käyttämään harjanvartta. Hiilidioksidiakku lupaavana energian varastointiratkaisuna.</p>
+                <p class="ep-people">Mukana Elina Hiltunen &amp; Jukka Häkkinen</p>
+              </div>
+              <a class="ep-go tv" href="https://areena.yle.fi/1-77193884" target="_blank" rel="noopener" aria-label="Katso Areenassa: Veronika on vähän niin kuin lehmien Einstein">Katso Areenassa <svg class="ico" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            </li>
+            <li class="ep" data-year="2025" data-search="oletko havainnut liikenneympyröissä kauniita käyriä ja klotoideja? liikenneympyröiden log-esteettisten käyrien ja klotoidien piilevä kauneus. kyyhkyset aistivat maan magneettikentän. jevonsin paradoksi ja tekoälyn energiankulutus. mukana jukka häkkinen &amp; samuli siltanen 26.11.2025">
+              <div class="ep-date">26.11.2025</div>
+              <div class="ep-body">
+                <h4 class="ep-title"><a href="https://areena.yle.fi/1-76703310" target="_blank" rel="noopener">Oletko havainnut liikenneympyröissä kauniita käyriä ja klotoideja?</a></h4>
+                <p class="ep-topics">Liikenneympyröiden log-esteettisten käyrien ja klotoidien piilevä kauneus. Kyyhkyset aistivat maan magneettikentän. Jevonsin paradoksi ja tekoälyn energiankulutus.</p>
+                <p class="ep-people">Mukana Jukka Häkkinen &amp; Samuli Siltanen</p>
+              </div>
+              <a class="ep-go tv" href="https://areena.yle.fi/1-76703310" target="_blank" rel="noopener" aria-label="Katso Areenassa: Oletko havainnut liikenneympyröissä kauniita käyriä ja klotoideja?">Katso Areenassa <svg class="ico" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            </li>
+            <li class="ep" data-year="2025" data-search="&#x27;seitinohuet päiväkännit&#x27; -tutkimus voitti ig nobelin rauhanpalkinnon mahdollisia elämän merkkejä marsissa. miten kielen vinoumat muokkaavat käsitystä terveysriskien kehityksestä. ig nobel -palkitut. disinformaatio vastaan tiede. mukana samuli siltanen &amp; anne liljeström 24.9.2025">
+              <div class="ep-date">24.9.2025</div>
+              <div class="ep-body">
+                <h4 class="ep-title"><a href="https://areena.yle.fi/1-76207912" target="_blank" rel="noopener">&#x27;Seitinohuet päiväkännit&#x27; -tutkimus voitti Ig Nobelin rauhanpalkinnon</a></h4>
+                <p class="ep-topics">Mahdollisia elämän merkkejä Marsissa. Miten kielen vinoumat muokkaavat käsitystä terveysriskien kehityksestä. Ig Nobel -palkitut. Disinformaatio vastaan tiede.</p>
+                <p class="ep-people">Mukana Samuli Siltanen &amp; Anne Liljeström</p>
+              </div>
+              <a class="ep-go tv" href="https://areena.yle.fi/1-76207912" target="_blank" rel="noopener" aria-label="Katso Areenassa: &#x27;Seitinohuet päiväkännit&#x27; -tutkimus voitti Ig Nobelin rauhanpalkinnon">Katso Areenassa <svg class="ico" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            </li>
+            <li class="ep" data-year="2025" data-search="komeettahavainnot pistää aina miettimään, kuinka valmiita me ollaan sysäisemään niitä pois törmäyskurssilta tähtienvälisen komeetan 3i/atlas havainto. maailmanlaajuinen makean veden kriisi. tekoälyjärjestelmät kehittävät oman viestintäkielensä. mukana elina hiltunen &amp; anne liljeström 30.7.2025">
+              <div class="ep-date">30.7.2025</div>
+              <div class="ep-body">
+                <h4 class="ep-title"><a href="https://areena.yle.fi/1-75823703" target="_blank" rel="noopener">Komeettahavainnot pistää aina miettimään, kuinka valmiita me ollaan sysäisemään niitä pois törmäyskurssilta</a></h4>
+                <p class="ep-topics">Tähtienvälisen komeetan 3I/ATLAS havainto. Maailmanlaajuinen makean veden kriisi. Tekoälyjärjestelmät kehittävät oman viestintäkielensä.</p>
+                <p class="ep-people">Mukana Elina Hiltunen &amp; Anne Liljeström</p>
+              </div>
+              <a class="ep-go tv" href="https://areena.yle.fi/1-75823703" target="_blank" rel="noopener" aria-label="Katso Areenassa: Komeettahavainnot pistää aina miettimään, kuinka valmiita me ollaan sysäisemään niitä pois törmäyskurssilta">Katso Areenassa <svg class="ico" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            </li>
+            <li class="ep" data-year="2025" data-search="korallit ovat stressaantuneita koralliriutat meren sademetsinä. kadonneen kantaindoeurooppalaisen kulttuurin jäljillä. miten chatgpt vaikuttaa ihmisen ajatteluun. mukana elina hiltunen 25.6.2025">
+              <div class="ep-date">25.6.2025</div>
+              <div class="ep-body">
+                <h4 class="ep-title"><a href="https://areena.yle.fi/1-75606264" target="_blank" rel="noopener">Korallit ovat stressaantuneita</a></h4>
+                <p class="ep-topics">Koralliriutat meren sademetsinä. Kadonneen kantaindoeurooppalaisen kulttuurin jäljillä. Miten ChatGPT vaikuttaa ihmisen ajatteluun.</p>
+                <p class="ep-people">Mukana Elina Hiltunen</p>
+              </div>
+              <a class="ep-go tv" href="https://areena.yle.fi/1-75606264" target="_blank" rel="noopener" aria-label="Katso Areenassa: Korallit ovat stressaantuneita">Katso Areenassa <svg class="ico" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            </li>
+            <li class="ep" data-year="2025" data-search="myrkyllisin sieni maistuu &#x27;lempeän pähkinäiselle&#x27; – mutta kuka sitä on maistanut? maailman myrkyllisin sieni ja kuka sitä uskalsi maistaa. uusi löydetty väri. maailman karvaisin synteettinen aine. mukana lauri reuter &amp; samuli siltanen 30.4.2025">
+              <div class="ep-date">30.4.2025</div>
+              <div class="ep-body">
+                <h4 class="ep-title"><a href="https://areena.yle.fi/1-74366625" target="_blank" rel="noopener">Myrkyllisin sieni maistuu &#x27;lempeän pähkinäiselle&#x27; – mutta kuka sitä on maistanut?</a></h4>
+                <p class="ep-topics">Maailman myrkyllisin sieni ja kuka sitä uskalsi maistaa. Uusi löydetty väri. Maailman karvaisin synteettinen aine.</p>
+                <p class="ep-people">Mukana Lauri Reuter &amp; Samuli Siltanen</p>
+              </div>
+              <a class="ep-go tv" href="https://areena.yle.fi/1-74366625" target="_blank" rel="noopener" aria-label="Katso Areenassa: Myrkyllisin sieni maistuu &#x27;lempeän pähkinäiselle&#x27; – mutta kuka sitä on maistanut?">Katso Areenassa <svg class="ico" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            </li>
+            <li class="ep" data-year="2025" data-search="miksi ihmiset viehättyvät autokolarivideoista ja true crimestä? miksi autokolarivideot ja true crime kiehtovat – psykologinen näkökulma. mitä tutkijat ajattelevat maan ulkopuolisesta elämästä. mukana lauri reuter &amp; anne liljeström 29.1.2025">
+              <div class="ep-date">29.1.2025</div>
+              <div class="ep-body">
+                <h4 class="ep-title"><a href="https://areena.yle.fi/1-73262582" target="_blank" rel="noopener">Miksi ihmiset viehättyvät autokolarivideoista ja true crimestä?</a></h4>
+                <p class="ep-topics">Miksi autokolarivideot ja true crime kiehtovat – psykologinen näkökulma. Mitä tutkijat ajattelevat maan ulkopuolisesta elämästä.</p>
+                <p class="ep-people">Mukana Lauri Reuter &amp; Anne Liljeström</p>
+              </div>
+              <a class="ep-go tv" href="https://areena.yle.fi/1-73262582" target="_blank" rel="noopener" aria-label="Katso Areenassa: Miksi ihmiset viehättyvät autokolarivideoista ja true crimestä?">Katso Areenassa <svg class="ico" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            </li>
+            <li class="ep" data-year="2024" data-search="majavan taito rakentaa pato tulee geeneistä, ei oppimalla majava rakentaa padon geeniensä, ei oppimisen ansiosta. eläinten synnynnäinen ja opittu käyttäytyminen. mukana sini merikallio &amp; lauri reuter 30.10.2024">
+              <div class="ep-date">30.10.2024</div>
+              <div class="ep-body">
+                <h4 class="ep-title"><a href="https://areena.yle.fi/1-72317383" target="_blank" rel="noopener">Majavan taito rakentaa pato tulee geeneistä, ei oppimalla</a></h4>
+                <p class="ep-topics">Majava rakentaa padon geeniensä, ei oppimisen ansiosta. Eläinten synnynnäinen ja opittu käyttäytyminen.</p>
+                <p class="ep-people">Mukana Sini Merikallio &amp; Lauri Reuter</p>
+              </div>
+              <a class="ep-go tv" href="https://areena.yle.fi/1-72317383" target="_blank" rel="noopener" aria-label="Katso Areenassa: Majavan taito rakentaa pato tulee geeneistä, ei oppimalla">Katso Areenassa <svg class="ico" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            </li>
+            <li class="ep" data-year="2024" data-search="velvollisuus kannustaa monesti paremmin kuin raha tartratsiiniväri tekee ihosta läpinäkyvän. miksi velvollisuudentunne motivoi paremmin kuin raha. nirsoilun psykologia. mukana jukka häkkinen &amp; anne liljeström 25.9.2024">
+              <div class="ep-date">25.9.2024</div>
+              <div class="ep-body">
+                <h4 class="ep-title"><a href="https://areena.yle.fi/1-71939439" target="_blank" rel="noopener">Velvollisuus kannustaa monesti paremmin kuin raha</a></h4>
+                <p class="ep-topics">Tartratsiiniväri tekee ihosta läpinäkyvän. Miksi velvollisuudentunne motivoi paremmin kuin raha. Nirsoilun psykologia.</p>
+                <p class="ep-people">Mukana Jukka Häkkinen &amp; Anne Liljeström</p>
+              </div>
+              <a class="ep-go tv" href="https://areena.yle.fi/1-71939439" target="_blank" rel="noopener" aria-label="Katso Areenassa: Velvollisuus kannustaa monesti paremmin kuin raha">Katso Areenassa <svg class="ico" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            </li>
+            <li class="ep" data-year="2024" data-search="ihminen kertoo, kun sattuu – hevonen yrittää vaan selvitä kivun ja stressin tunnistaminen eläimillä. miksi nuoruuden musiikki tuntuu parhaalta. mukana lauri reuter &amp; sini merikallio 31.7.2024">
+              <div class="ep-date">31.7.2024</div>
+              <div class="ep-body">
+                <h4 class="ep-title"><a href="https://areena.yle.fi/1-71583714" target="_blank" rel="noopener">Ihminen kertoo, kun sattuu – hevonen yrittää vaan selvitä</a></h4>
+                <p class="ep-topics">Kivun ja stressin tunnistaminen eläimillä. Miksi nuoruuden musiikki tuntuu parhaalta.</p>
+                <p class="ep-people">Mukana Lauri Reuter &amp; Sini Merikallio</p>
+              </div>
+              <a class="ep-go tv" href="https://areena.yle.fi/1-71583714" target="_blank" rel="noopener" aria-label="Katso Areenassa: Ihminen kertoo, kun sattuu – hevonen yrittää vaan selvitä">Katso Areenassa <svg class="ico" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            </li>
+            <li class="ep" data-year="2024" data-search="mitä avaruudessa oleskelu tekee ihmiskeholle? avaruudessa oleskelun terveysvaikutukset. avaruudellinen disorientaatio. knoben-ilmiö havaitsemisessa. mukana sini merikallio &amp; anne liljeström 26.6.2024">
+              <div class="ep-date">26.6.2024</div>
+              <div class="ep-body">
+                <h4 class="ep-title"><a href="https://areena.yle.fi/1-71192533" target="_blank" rel="noopener">Mitä avaruudessa oleskelu tekee ihmiskeholle?</a></h4>
+                <p class="ep-topics">Avaruudessa oleskelun terveysvaikutukset. Avaruudellinen disorientaatio. Knoben-ilmiö havaitsemisessa.</p>
+                <p class="ep-people">Mukana Sini Merikallio &amp; Anne Liljeström</p>
+              </div>
+              <a class="ep-go tv" href="https://areena.yle.fi/1-71192533" target="_blank" rel="noopener" aria-label="Katso Areenassa: Mitä avaruudessa oleskelu tekee ihmiskeholle?">Katso Areenassa <svg class="ico" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            </li>
+            <li class="ep" data-year="2024" data-search="oliko ennen kaikki paremmin? nostalgiaharha – oliko ennen todella kaikki paremmin? mukana elina hiltunen &amp; lauri reuter 31.1.2024">
+              <div class="ep-date">31.1.2024</div>
+              <div class="ep-body">
+                <h4 class="ep-title"><a href="https://areena.yle.fi/1-67838419" target="_blank" rel="noopener">Oliko ennen kaikki paremmin?</a></h4>
+                <p class="ep-topics">Nostalgiaharha – oliko ennen todella kaikki paremmin?</p>
+                <p class="ep-people">Mukana Elina Hiltunen &amp; Lauri Reuter</p>
+              </div>
+              <a class="ep-go tv" href="https://areena.yle.fi/1-67838419" target="_blank" rel="noopener" aria-label="Katso Areenassa: Oliko ennen kaikki paremmin?">Katso Areenassa <svg class="ico" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            </li>
+            <li class="ep" data-year="2023" data-search="jälkikaronkkalaiset pohtivat tekoälyn rantautumista vuoden päätösjakso: tekoälyn nopea vaikutus tieteeseen ja arkeen. mukana jukka häkkinen &amp; samuli siltanen 20.12.2023">
+              <div class="ep-date">20.12.2023</div>
+              <div class="ep-body">
+                <h4 class="ep-title"><a href="https://areena.yle.fi/1-67459152" target="_blank" rel="noopener">Jälkikaronkkalaiset pohtivat tekoälyn rantautumista</a></h4>
+                <p class="ep-topics">Vuoden päätösjakso: tekoälyn nopea vaikutus tieteeseen ja arkeen.</p>
+                <p class="ep-people">Mukana Jukka Häkkinen &amp; Samuli Siltanen</p>
+              </div>
+              <a class="ep-go tv" href="https://areena.yle.fi/1-67459152" target="_blank" rel="noopener" aria-label="Katso Areenassa: Jälkikaronkkalaiset pohtivat tekoälyn rantautumista">Katso Areenassa <svg class="ico" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            </li>
+            <li class="ep" data-year="2023" data-search="psykologisten termien hämärtyminen ja arkistuminen miten psykologiset termit menettävät kliinisen merkityksensä arkikieleen siirtyessään. mukana lauri reuter &amp; elina hiltunen 29.11.2023">
+              <div class="ep-date">29.11.2023</div>
+              <div class="ep-body">
+                <h4 class="ep-title"><a href="https://areena.yle.fi/1-67307449" target="_blank" rel="noopener">Psykologisten termien hämärtyminen ja arkistuminen</a></h4>
+                <p class="ep-topics">Miten psykologiset termit menettävät kliinisen merkityksensä arkikieleen siirtyessään.</p>
+                <p class="ep-people">Mukana Lauri Reuter &amp; Elina Hiltunen</p>
+              </div>
+              <a class="ep-go tv" href="https://areena.yle.fi/1-67307449" target="_blank" rel="noopener" aria-label="Katso Areenassa: Psykologisten termien hämärtyminen ja arkistuminen">Katso Areenassa <svg class="ico" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            </li>
+            <li class="ep" data-year="2023" data-search="miksi ihmisten on vaikea hahmottaa isoja lukuja? dartmouthin kasvoarpikoe. uhrikäyttäytymisen psykologia. ihmisen uteliaisuus ja suurten lukujen hahmottamisen vaikeus. mukana jukka häkkinen &amp; sini merikallio 25.10.2023">
+              <div class="ep-date">25.10.2023</div>
+              <div class="ep-body">
+                <h4 class="ep-title"><a href="https://areena.yle.fi/1-67028622" target="_blank" rel="noopener">Miksi ihmisten on vaikea hahmottaa isoja lukuja?</a></h4>
+                <p class="ep-topics">Dartmouthin kasvoarpikoe. Uhrikäyttäytymisen psykologia. Ihmisen uteliaisuus ja suurten lukujen hahmottamisen vaikeus.</p>
+                <p class="ep-people">Mukana Jukka Häkkinen &amp; Sini Merikallio</p>
+              </div>
+              <a class="ep-go tv" href="https://areena.yle.fi/1-67028622" target="_blank" rel="noopener" aria-label="Katso Areenassa: Miksi ihmisten on vaikea hahmottaa isoja lukuja?">Katso Areenassa <svg class="ico" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            </li>
+            <li class="ep" data-year="2023" data-search="persoonallisuuden &#x27;pimeään kolmikkoon&#x27; halutaan lisätä neljäs julma piirre persoonallisuuden pimeä kolmikko ja ehdotukset neljännen julman piirteen lisäämisestä. mukana samuli siltanen &amp; sini merikallio 26.7.2023">
+              <div class="ep-date">26.7.2023</div>
+              <div class="ep-body">
+                <h4 class="ep-title"><a href="https://areena.yle.fi/1-66452380" target="_blank" rel="noopener">Persoonallisuuden &#x27;pimeään kolmikkoon&#x27; halutaan lisätä neljäs julma piirre</a></h4>
+                <p class="ep-topics">Persoonallisuuden pimeä kolmikko ja ehdotukset neljännen julman piirteen lisäämisestä.</p>
+                <p class="ep-people">Mukana Samuli Siltanen &amp; Sini Merikallio</p>
+              </div>
+              <a class="ep-go tv" href="https://areena.yle.fi/1-66452380" target="_blank" rel="noopener" aria-label="Katso Areenassa: Persoonallisuuden &#x27;pimeään kolmikkoon&#x27; halutaan lisätä neljäs julma piirre">Katso Areenassa <svg class="ico" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            </li>
+            <li class="ep" data-year="2023" data-search="onhan se huimaa, että ajattelemalla voi ohjata vaikka robottikättä tekoäly liikennejärjestelmissä. klassisen musiikin vaikutus lehmiin. aivoimplantit ja hermorajapinnat robottiraajojen ohjaamisessa. mukana elina hiltunen &amp; sini merikallio 31.5.2023">
+              <div class="ep-date">31.5.2023</div>
+              <div class="ep-body">
+                <h4 class="ep-title"><a href="https://areena.yle.fi/1-66020466" target="_blank" rel="noopener">Onhan se huimaa, että ajattelemalla voi ohjata vaikka robottikättä</a></h4>
+                <p class="ep-topics">Tekoäly liikennejärjestelmissä. Klassisen musiikin vaikutus lehmiin. Aivoimplantit ja hermorajapinnat robottiraajojen ohjaamisessa.</p>
+                <p class="ep-people">Mukana Elina Hiltunen &amp; Sini Merikallio</p>
+              </div>
+              <a class="ep-go tv" href="https://areena.yle.fi/1-66020466" target="_blank" rel="noopener" aria-label="Katso Areenassa: Onhan se huimaa, että ajattelemalla voi ohjata vaikka robottikättä">Katso Areenassa <svg class="ico" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            </li>
+            <li class="ep" data-year="2023" data-search="pohjaako kiroilu apinavaiheen hätähuutomekanismiin? kiroilun biologinen alkuperä. misofonia vai tavallinen ärtymys. matemaattinen löytö nimeltä einsteinin hattu. mukana jukka häkkinen &amp; samuli siltanen 26.4.2023">
+              <div class="ep-date">26.4.2023</div>
+              <div class="ep-body">
+                <h4 class="ep-title"><a href="https://areena.yle.fi/1-65753926" target="_blank" rel="noopener">Pohjaako kiroilu apinavaiheen hätähuutomekanismiin?</a></h4>
+                <p class="ep-topics">Kiroilun biologinen alkuperä. Misofonia vai tavallinen ärtymys. Matemaattinen löytö nimeltä Einsteinin hattu.</p>
+                <p class="ep-people">Mukana Jukka Häkkinen &amp; Samuli Siltanen</p>
+              </div>
+              <a class="ep-go tv" href="https://areena.yle.fi/1-65753926" target="_blank" rel="noopener" aria-label="Katso Areenassa: Pohjaako kiroilu apinavaiheen hätähuutomekanismiin?">Katso Areenassa <svg class="ico" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            </li>
+            <li class="ep" data-year="2023" data-search="kertooko jotakin ihmisestä, jos ei pidä kauhusta? mitä kauhun rakastaminen tai inhoaminen kertoo persoonallisuudesta. pelon ja viihteen psykologia. mukana sini merikallio &amp; lauri reuter 29.3.2023">
+              <div class="ep-date">29.3.2023</div>
+              <div class="ep-body">
+                <h4 class="ep-title"><a href="https://areena.yle.fi/1-65452202" target="_blank" rel="noopener">Kertooko jotakin ihmisestä, jos ei pidä kauhusta?</a></h4>
+                <p class="ep-topics">Mitä kauhun rakastaminen tai inhoaminen kertoo persoonallisuudesta. Pelon ja viihteen psykologia.</p>
+                <p class="ep-people">Mukana Sini Merikallio &amp; Lauri Reuter</p>
+              </div>
+              <a class="ep-go tv" href="https://areena.yle.fi/1-65452202" target="_blank" rel="noopener" aria-label="Katso Areenassa: Kertooko jotakin ihmisestä, jos ei pidä kauhusta?">Katso Areenassa <svg class="ico" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            </li>
+            <li class="ep" data-year="2023" data-search="mitä ovat kollektiiviset illuusiot? kollektiiviset illuusiot – kun ryhmä uskoo jotakin, minkä useimmat sen jäsenistä yksityisesti torjuvat. mukana lauri reuter &amp; elina hiltunen 25.1.2023">
+              <div class="ep-date">25.1.2023</div>
+              <div class="ep-body">
+                <h4 class="ep-title"><a href="https://areena.yle.fi/1-64911179" target="_blank" rel="noopener">Mitä ovat kollektiiviset illuusiot?</a></h4>
+                <p class="ep-topics">Kollektiiviset illuusiot – kun ryhmä uskoo jotakin, minkä useimmat sen jäsenistä yksityisesti torjuvat.</p>
+                <p class="ep-people">Mukana Lauri Reuter &amp; Elina Hiltunen</p>
+              </div>
+              <a class="ep-go tv" href="https://areena.yle.fi/1-64911179" target="_blank" rel="noopener" aria-label="Katso Areenassa: Mitä ovat kollektiiviset illuusiot?">Katso Areenassa <svg class="ico" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            </li>
+            <li class="ep" data-year="2022" data-search="mitä yhteistä on james webb -teleskoopin peilillä ja ihmisen hiuskarvalla? james webb -teleskoopin peilien kalibrointi. matematiikan fieldsin mitali. kehollinen kognitio – kehon ja ympäristön käyttö ajattelussa. mukana anne liljeström &amp; samuli siltanen 30.3.2022">
+              <div class="ep-date">30.3.2022</div>
+              <div class="ep-body">
+                <h4 class="ep-title"><a href="https://areena.yle.fi/1-62106153" target="_blank" rel="noopener">Mitä yhteistä on James Webb -teleskoopin peilillä ja ihmisen hiuskarvalla?</a></h4>
+                <p class="ep-topics">James Webb -teleskoopin peilien kalibrointi. Matematiikan Fieldsin mitali. Kehollinen kognitio – kehon ja ympäristön käyttö ajattelussa.</p>
+                <p class="ep-people">Mukana Anne Liljeström &amp; Samuli Siltanen</p>
+              </div>
+              <a class="ep-go tv" href="https://areena.yle.fi/1-62106153" target="_blank" rel="noopener" aria-label="Katso Areenassa: Mitä yhteistä on James Webb -teleskoopin peilillä ja ihmisen hiuskarvalla?">Katso Areenassa <svg class="ico" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            </li>
+            <li class="ep" data-year="2021" data-search="kobra-ilmiö eli tahattomien seurausten laki kobra-ilmiö eli tahattomien seurausten laki. miksi nuoret valitsevat mieluummin sähköiskun kuin tylsyyden. mukana jukka häkkinen &amp; samuli siltanen 24.2.2021">
+              <div class="ep-date">24.2.2021</div>
+              <div class="ep-body">
+                <h4 class="ep-title"><a href="https://areena.yle.fi/1-50773278" target="_blank" rel="noopener">Kobra-ilmiö eli tahattomien seurausten laki</a></h4>
+                <p class="ep-topics">Kobra-ilmiö eli tahattomien seurausten laki. Miksi nuoret valitsevat mieluummin sähköiskun kuin tylsyyden.</p>
+                <p class="ep-people">Mukana Jukka Häkkinen &amp; Samuli Siltanen</p>
+              </div>
+              <a class="ep-go tv" href="https://areena.yle.fi/1-50773278" target="_blank" rel="noopener" aria-label="Katso Areenassa: Kobra-ilmiö eli tahattomien seurausten laki">Katso Areenassa <svg class="ico" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            </li>
+            <li class="ep" data-year="2020" data-search="venuksessa saattaa olla elämää, korona on parantanut lintujen laulun laatua mahdollista elämää venuksessa. miten koronasulku paransi lintujen laulun laatua. ovatko kaikki virukset haitallisia? mukana sini merikallio &amp; jukka häkkinen 30.9.2020">
+              <div class="ep-date">30.9.2020</div>
+              <div class="ep-body">
+                <h4 class="ep-title"><a href="https://areena.yle.fi/1-50641475" target="_blank" rel="noopener">Venuksessa saattaa olla elämää, korona on parantanut lintujen laulun laatua</a></h4>
+                <p class="ep-topics">Mahdollista elämää Venuksessa. Miten koronasulku paransi lintujen laulun laatua. Ovatko kaikki virukset haitallisia?</p>
+                <p class="ep-people">Mukana Sini Merikallio &amp; Jukka Häkkinen</p>
+              </div>
+              <a class="ep-go tv" href="https://areena.yle.fi/1-50641475" target="_blank" rel="noopener" aria-label="Katso Areenassa: Venuksessa saattaa olla elämää, korona on parantanut lintujen laulun laatua">Katso Areenassa <svg class="ico" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            </li>
+            <li class="ep" data-year="2020" data-search="ihmisten ja eläinten terveys yhdistyi toisiinsa koronassa saippua ja matematiikka. epidemioiden mallintaminen. koronan psykologiset uhat. ihmisten ja eläinten terveyden yhteys. mukana sini merikallio &amp; samuli siltanen 25.3.2020">
+              <div class="ep-date">25.3.2020</div>
+              <div class="ep-body">
+                <h4 class="ep-title"><a href="https://areena.yle.fi/1-50484515" target="_blank" rel="noopener">Ihmisten ja eläinten terveys yhdistyi toisiinsa koronassa</a></h4>
+                <p class="ep-topics">Saippua ja matematiikka. Epidemioiden mallintaminen. Koronan psykologiset uhat. Ihmisten ja eläinten terveyden yhteys.</p>
+                <p class="ep-people">Mukana Sini Merikallio &amp; Samuli Siltanen</p>
+              </div>
+              <a class="ep-go tv" href="https://areena.yle.fi/1-50484515" target="_blank" rel="noopener" aria-label="Katso Areenassa: Ihmisten ja eläinten terveys yhdistyi toisiinsa koronassa">Katso Areenassa <svg class="ico" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            </li>
+            <li class="ep" data-year="2020" data-search="huoliteoria pitäisi ottaa mukaan jokaiseen sairauteen sisäilmaoireet ja aivotutkimus. miksi sisäilman terveysvaikutuksista on vaikea saada tieteellistä näyttöä. mukana anne liljeström &amp; elina hiltunen 26.2.2020">
+              <div class="ep-date">26.2.2020</div>
+              <div class="ep-body">
+                <h4 class="ep-title"><a href="https://areena.yle.fi/1-50460907" target="_blank" rel="noopener">Huoliteoria pitäisi ottaa mukaan jokaiseen sairauteen</a></h4>
+                <p class="ep-topics">Sisäilmaoireet ja aivotutkimus. Miksi sisäilman terveysvaikutuksista on vaikea saada tieteellistä näyttöä.</p>
+                <p class="ep-people">Mukana Anne Liljeström &amp; Elina Hiltunen</p>
+              </div>
+              <a class="ep-go tv" href="https://areena.yle.fi/1-50460907" target="_blank" rel="noopener" aria-label="Katso Areenassa: Huoliteoria pitäisi ottaa mukaan jokaiseen sairauteen">Katso Areenassa <svg class="ico" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            </li>
+            <li class="ep" data-year="2019" data-search="jos mies on jämäkkä ja aggressiivinen, häntä pidetään johtajana sukupuolivinouma johtajuuskäsityksissä – jämäkkä mies nähdään johtajana, jämäkkä nainen hankalana. käsinkirjoittamisen merkitys oppimisessa. mukana jukka häkkinen &amp; elina hiltunen 18.12.2019">
+              <div class="ep-date">18.12.2019</div>
+              <div class="ep-body">
+                <h4 class="ep-title"><a href="https://areena.yle.fi/1-50393165" target="_blank" rel="noopener">Jos mies on jämäkkä ja aggressiivinen, häntä pidetään johtajana</a></h4>
+                <p class="ep-topics">Sukupuolivinouma johtajuuskäsityksissä – jämäkkä mies nähdään johtajana, jämäkkä nainen hankalana. Käsinkirjoittamisen merkitys oppimisessa.</p>
+                <p class="ep-people">Mukana Jukka Häkkinen &amp; Elina Hiltunen</p>
+              </div>
+              <a class="ep-go tv" href="https://areena.yle.fi/1-50393165" target="_blank" rel="noopener" aria-label="Katso Areenassa: Jos mies on jämäkkä ja aggressiivinen, häntä pidetään johtajana">Katso Areenassa <svg class="ico" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            </li>
+          </ol>
+          <p class="empty" hidden>Hakuasi vastaavia jaksoja ei löytynyt.</p>
+          <button type="button" class="more" data-all="Näytä kaikki {n} jaksoa" data-less="Näytä vähemmän" hidden></button>
+        </div>
+        <div class="panel" role="tabpanel" id="podcasts" aria-labelledby="tab-podcasts">
+          <div class="panel-head">
+            <div>
+              <h3 class="panel-title">Podcast-vierailut <span class="panel-channel">· Vieraana</span></h3>
+              <p class="panel-blurb">Pitkiä keskusteluja vieraana suomalaisissa podcasteissa.</p>
+            </div>
+          </div>
+          <div class="chips" role="group" aria-label="Suodata vuoden mukaan"><button type="button" class="chip on" data-year="all">Kaikki</button><button type="button" class="chip" data-year="2026">2026</button><button type="button" class="chip" data-year="2025">2025</button><button type="button" class="chip" data-year="2024">2024</button></div>
+          <ol class="eps" data-limit="6">
+            <li class="ep" data-year="2026" data-search="jarkko tontti podcast – jori grym verojen välttelyn psykologia. moraaliarvojen erot länsimaisten ja muiden yhteiskuntien välillä. miten politisoituminen uhkaa tieteellistä tutkimusta. juontaja: jarkko tontti 14.1.2026">
+              <div class="ep-date">14.1.2026</div>
+              <div class="ep-body">
+                <h4 class="ep-title"><a href="https://jarkkotontti.net/jori-grym/" target="_blank" rel="noopener">Jarkko Tontti Podcast – Jori Grym</a></h4>
+                <p class="ep-topics">Verojen välttelyn psykologia. Moraaliarvojen erot länsimaisten ja muiden yhteiskuntien välillä. Miten politisoituminen uhkaa tieteellistä tutkimusta.</p>
+                <p class="ep-people">Juontaja: Jarkko Tontti</p>
+              </div>
+              <a class="ep-go podcasts" href="https://jarkkotontti.net/jori-grym/" target="_blank" rel="noopener" aria-label="Kuuntele: Jarkko Tontti Podcast – Jori Grym">Kuuntele <svg class="ico" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            </li>
+            <li class="ep" data-year="2025" data-search="asiastudio – tekoäly voi tuhota sinut eikä vihaa sinua lainkaan tekoälyn eksistentiaaliset riskit – miksi tekoäly voi tuhota sinut vihaamatta sinua lainkaan. tekoälyn arvolinjauksen haasteet ja mikä tekee kehittyneestä tekoälystä vaarallisen. juontaja: asiastudio nauhoitettu 23.6.2025">
+              <div class="ep-date">Nauhoitettu 23.6.2025</div>
+              <div class="ep-body">
+                <h4 class="ep-title"><a href="https://www.asiastudio.fi/tekoaly-voi-tuhota-sinut-eika-vihaa-sinua-lainkaan/" target="_blank" rel="noopener">Asiastudio – Tekoäly voi tuhota sinut eikä vihaa sinua lainkaan</a></h4>
+                <p class="ep-topics">Tekoälyn eksistentiaaliset riskit – miksi tekoäly voi tuhota sinut vihaamatta sinua lainkaan. Tekoälyn arvolinjauksen haasteet ja mikä tekee kehittyneestä tekoälystä vaarallisen.</p>
+                <p class="ep-people">Juontaja: Asiastudio</p>
+              </div>
+              <a class="ep-go podcasts" href="https://www.asiastudio.fi/tekoaly-voi-tuhota-sinut-eika-vihaa-sinua-lainkaan/" target="_blank" rel="noopener" aria-label="Kuuntele: Asiastudio – Tekoäly voi tuhota sinut eikä vihaa sinua lainkaan">Kuuntele <svg class="ico" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            </li>
+            <li class="ep" data-year="2025" data-search="asiastudio – saako enää sanoa palomies? miksi kieli suututtaa vasemmiston? kielen politiikka – saako enää sanoa palomies? miksi sukupuolittunut kieli herättää voimakkaita reaktioita. vasemmiston ja oikeiston jako kielireformeissa ja poliittisessa korrektiudessa. juontaja: asiastudio nauhoitettu 10.6.2025">
+              <div class="ep-date">Nauhoitettu 10.6.2025</div>
+              <div class="ep-body">
+                <h4 class="ep-title"><a href="https://www.asiastudio.fi/saako-enaa-sanoa-palomies-miksi-kieli-suututtaa-vasemmiston/" target="_blank" rel="noopener">Asiastudio – Saako enää sanoa palomies? Miksi kieli suututtaa vasemmiston?</a></h4>
+                <p class="ep-topics">Kielen politiikka – saako enää sanoa palomies? Miksi sukupuolittunut kieli herättää voimakkaita reaktioita. Vasemmiston ja oikeiston jako kielireformeissa ja poliittisessa korrektiudessa.</p>
+                <p class="ep-people">Juontaja: Asiastudio</p>
+              </div>
+              <a class="ep-go podcasts" href="https://www.asiastudio.fi/saako-enaa-sanoa-palomies-miksi-kieli-suututtaa-vasemmiston/" target="_blank" rel="noopener" aria-label="Kuuntele: Asiastudio – Saako enää sanoa palomies? Miksi kieli suututtaa vasemmiston?">Kuuntele <svg class="ico" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            </li>
+            <li class="ep" data-year="2025" data-search="futucast #429 tekoälyllä tehdyn pornon ongelmat. deepfake-teknologia ja sen yhteiskunnalliset vaikutukset. evoluutiopsykologinen näkökulma digitaaliseen sisältöön. juontaja: futucast 2025">
+              <div class="ep-date">2025</div>
+              <div class="ep-body">
+                <h4 class="ep-title"><a href="https://innohub.fi/podcastjakso/tekoalypornon-ongelmat-deepfake-evoluutiopsykologia-jori-grym-429/" target="_blank" rel="noopener">Futucast #429</a></h4>
+                <p class="ep-topics">Tekoälyllä tehdyn pornon ongelmat. Deepfake-teknologia ja sen yhteiskunnalliset vaikutukset. Evoluutiopsykologinen näkökulma digitaaliseen sisältöön.</p>
+                <p class="ep-people">Juontaja: Futucast</p>
+              </div>
+              <a class="ep-go podcasts" href="https://innohub.fi/podcastjakso/tekoalypornon-ongelmat-deepfake-evoluutiopsykologia-jori-grym-429/" target="_blank" rel="noopener" aria-label="Kuuntele: Futucast #429">Kuuntele <svg class="ico" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            </li>
+            <li class="ep" data-year="2024" data-search="hildén &amp; kaira podcast #080 – jori grym tekoälyn riskit ja hyödyntäminen lännessä ja idässä. syyttelykulttuuri ja sosiaaliset statuspelit. samanlaisten lopputulosten moraalinen arviointi eri tilanteissa. syntyvyyden lasku. yksilönvapaus vastaan merkityksen löytäminen elämään. juontajat: aarni hildén &amp; matti kaira 30.3.2024">
+              <div class="ep-date">30.3.2024</div>
+              <div class="ep-body">
+                <h4 class="ep-title"><a href="https://open.spotify.com/episode/01Q23lEv4UNP5irC0okHst" target="_blank" rel="noopener">Hildén &amp; Kaira Podcast #080 – Jori Grym</a></h4>
+                <p class="ep-topics">Tekoälyn riskit ja hyödyntäminen lännessä ja idässä. Syyttelykulttuuri ja sosiaaliset statuspelit. Samanlaisten lopputulosten moraalinen arviointi eri tilanteissa. Syntyvyyden lasku. Yksilönvapaus vastaan merkityksen löytäminen elämään.</p>
+                <p class="ep-people">Juontajat: Aarni Hildén &amp; Matti Kaira</p>
+              </div>
+              <a class="ep-go podcasts" href="https://open.spotify.com/episode/01Q23lEv4UNP5irC0okHst" target="_blank" rel="noopener" aria-label="Kuuntele Spotifyssa: Hildén &amp; Kaira Podcast #080 – Jori Grym">Kuuntele Spotifyssa <svg class="ico" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            </li>
+          </ol>
+          <p class="empty" hidden>Hakuasi vastaavia jaksoja ei löytynyt.</p>
+          <button type="button" class="more" data-all="Näytä kaikki {n} jaksoa" data-less="Näytä vähemmän" hidden></button>
+        </div>
+      </div>
+    </section>
+
+    <section class="block contact" id="contact">
+      <div class="wrap">
+        <h2>Ota yhteyttä</h2>
+        <p>Luennot, mediapyynnöt ja tutkimusyhteistyö.</p>
+        <div class="actions">
+          <a class="btn primary" href="mailto:info@jorigrym.com">Sähköposti</a>
+          <a class="btn" href="https://linkedin.com/in/jorigrym" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="btn" href="https://x.com/GrymJori" target="_blank" rel="noopener">X / Twitter</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <span>&copy; 2026 Jori Grym</span>
+      <a href="#top">Takaisin ylös ↑</a>
+    </div>
+  </footer>
+
+  <script>
+  (function () {
+    document.documentElement.classList.add('js');
+    var $ = function (s, r) { return (r || document).querySelector(s); };
+    var $$ = function (s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
+
+    /* Counts and year filters are derived from the entries, so adding an entry needs no other edits. */
+    function setText(el, n) { if (el) el.textContent = n; }
+    var nPubs = $$('#publications .rows > li').length, nWrite = $$('#writing-list > li').length;
+    var nRadio = $$('#radio .ep').length, nTv = $$('#tv .ep').length, nPods = $$('#podcasts .ep').length;
+    setText($('[data-stat="pubs"] b'), nPubs); setText($('[data-stat="articles"] b'), nWrite);
+    setText($('[data-stat="media"] b'), nRadio + nTv); setText($('[data-stat="pods"] b'), nPods);
+    $$('#blog .chip').forEach(function (c) {
+      var k = c.dataset.kind;
+      setText($('.n', c), k === 'all' ? nWrite : $$('#writing-list > li[data-kind="' + k + '"]').length);
+    });
+    $$('.panel').forEach(function (p) {
+      setText($('#tab-' + p.id + ' .tab-count'), $$('.ep', p).length);
+      var years = [];
+      $$('.ep', p).forEach(function (li) { if (years.indexOf(li.dataset.year) < 0) years.push(li.dataset.year); });
+      years.sort().reverse();
+      var box = $('.chips', p);
+      $$('.chip:not([data-year="all"])', box).forEach(function (c) { c.remove(); });
+      years.forEach(function (y) {
+        var b = document.createElement('button');
+        b.type = 'button'; b.className = 'chip'; b.dataset.year = y; b.textContent = y;
+        box.appendChild(b);
+      });
+    });
+
+    /* Show-more helper: hides items past the limit unless expanded or filtered. */
+    function paginate(list, button) {
+      var limit = +list.dataset.limit, expanded = false;
+      function update() {
+        var visible = $$(':scope > li', list).filter(function (li) { return !li.classList.contains('filtered'); });
+        var filtering = list.dataset.filtering === '1';
+        visible.forEach(function (li, i) { li.classList.toggle('is-hidden', !expanded && !filtering && i >= limit); });
+        $$(':scope > li.filtered', list).forEach(function (li) { li.classList.add('is-hidden'); });
+        var rest = visible.length - limit;
+        button.hidden = filtering || rest <= 0;
+        button.textContent = expanded ? button.dataset.less : button.dataset.all.replace('{n}', visible.length);
+        return visible.length;
+      }
+      button.addEventListener('click', function () {
+        expanded = !expanded; update();
+        if (!expanded) list.scrollIntoView({ block: 'start' });
+      });
+      return { update: update, reset: function () { expanded = false; } };
+    }
+
+    /* Writing filter */
+    var wList = $('#writing-list'), wPager = paginate(wList, $('#writing-more'));
+    function setKind(kind) {
+      $$('#blog .chip').forEach(function (c) { c.classList.toggle('on', c.dataset.kind === kind); });
+      $$(':scope > li', wList).forEach(function (li) { li.classList.toggle('filtered', kind !== 'all' && li.dataset.kind !== kind); });
+      wPager.reset(); wPager.update();
+    }
+    $$('#blog .chip').forEach(function (c) { c.addEventListener('click', function () { setKind(c.dataset.kind); }); });
+    wPager.update();
+
+    /* Media tabs, year chips and search */
+    $('.tabs').hidden = false; $('.search').hidden = false;
+    var panels = $$('.panel'), search = $('#media-search'), pagers = {};
+    panels.forEach(function (p) {
+      var list = $('.eps', p);
+      pagers[p.id] = paginate(list, $('.more', p));
+      $$('.chip', p).forEach(function (c) {
+        c.addEventListener('click', function () {
+          $$('.chip', p).forEach(function (x) { x.classList.toggle('on', x === c); });
+          filter(p);
+        });
+      });
+    });
+    function filter(p) {
+      var q = search.value.trim().toLowerCase();
+      var y = $('.chip.on', p).dataset.year, list = $('.eps', p);
+      $$('.ep', p).forEach(function (li) {
+        var ok = (y === 'all' || li.dataset.year === y) && (!q || (li.dataset.search || li.textContent.toLowerCase()).indexOf(q) > -1);
+        li.classList.toggle('filtered', !ok);
+      });
+      list.dataset.filtering = (q || y !== 'all') ? '1' : '0';
+      var n = pagers[p.id].update();
+      $('.empty', p).hidden = n > 0;
+    }
+    function selectTab(id) {
+      $$('.tab').forEach(function (t) { t.setAttribute('aria-selected', t.getAttribute('aria-controls') === id ? 'true' : 'false'); });
+      panels.forEach(function (p) { p.classList.toggle('is-hidden', p.id !== id); });
+      filter($('#' + id));
+    }
+    $$('.tab').forEach(function (t) { t.addEventListener('click', function () { selectTab(t.getAttribute('aria-controls')); }); });
+    search.addEventListener('input', function () { panels.forEach(filter); });
+    selectTab('radio');
+
+    /* Old deep links (#tv, #radio, #podcasts, #blog) keep working */
+    function route() {
+      var h = location.hash.slice(1);
+      if (['tv', 'radio', 'podcasts'].indexOf(h) > -1) { selectTab(h); $('#media').scrollIntoView(); }
+      else if (h === 'blog') { setKind('blog'); $('#articles').scrollIntoView(); }
+    }
+    window.addEventListener('hashchange', route); route();
+    $$('a[href="#podcasts"]').forEach(function (a) { a.addEventListener('click', function () { selectTab('podcasts'); }); });
+
+    /* Highlight the current section in the nav */
+    var links = $$('.nav a');
+    var secs = links.map(function (a) { return document.getElementById(a.getAttribute('href').slice(1)); });
+    var ticking = false;
+    function spy() {
+      ticking = false;
+      var line = window.innerHeight * 0.4, cur = -1;
+      secs.forEach(function (s, i) { if (s && s.getBoundingClientRect().top <= line) cur = i; });
+      if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4) cur = secs.length - 1;
+      links.forEach(function (a, i) { a.classList.toggle('on', i === cur); });
+    }
+    window.addEventListener('scroll', function () { if (!ticking) { ticking = true; requestAnimationFrame(spy); } }, { passive: true });
+    spy();
+  })();
+  </script>
+</body>
+</html>
